@@ -23,16 +23,6 @@
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/background_light" />
 
-    <Button
-        android:text="@string/btnEmpezar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnEmpezar"
-        tools:ignore="HardcodedText"
-        android:layout_marginBottom="129dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:text="@string/lblLocalizacion"
         android:layout_width="wrap_content"
@@ -73,5 +63,15 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnMaps"
         android:id="@+id/button2" />
+
+    <Button
+        android:text="@string/btnEmpezar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmpezar"
+        tools:ignore="HardcodedText"
+        android:layout_marginBottom="28dp"
+        android:layout_above="@+id/btnMaps"
+        android:layout_toEndOf="@+id/lblContacto" />
 
 </RelativeLayout>
