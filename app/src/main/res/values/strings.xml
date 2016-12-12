@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Kebab</string>
+    <string name="nom">Introduce tu nombre</string>
+    <string name="ape">Introduce tus apellidos</string>
+    <string name="direc">Introduce tu direccion</string>
+    <string name="cp">Codigo Postal</string>
+    <string name="email">Direccion de correo</string>
+    <string name="salir">Salir</string>
+    <string name="atras">Atras</string>
+    <string name="siguiente">Siguiente</string>
 </resources>
