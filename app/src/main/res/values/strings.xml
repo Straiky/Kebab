@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Kebab</string>
+    <string name="btnEmpezar">Empezar</string>
+    <string name="lblTitulo">Kebabjuacbar</string>
+    <string name="lblLocalizacion">Como llegar : </string>
+    <string name="btnMaps">Maps</string>
+    <string name="lblContacto">Contacto :</string>
+    <string name="btncontacto">Contacto</string>
     <string name="nom">Introduce tu nombre</string>
     <string name="ape">Introduce tus apellidos</string>
     <string name="direc">Introduce tu direccion</string>
