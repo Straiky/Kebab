@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnMaps"
-        android:id="@+id/button2" />
+        android:id="@+id/btnContacto" />
 
     <Button
         android:text="@string/btnEmpezar"
