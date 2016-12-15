@@ -14,4 +14,5 @@
     <string name="salir">Salir</string>
     <string name="atras">Atras</string>
     <string name="siguiente">Siguiente</string>
+    <string name="tel">Telefono</string>
 </resources>

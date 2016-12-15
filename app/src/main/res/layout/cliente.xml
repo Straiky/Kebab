@@ -71,13 +71,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
             android:layout_marginTop="15sp"
-            android:text="Email:"
+            android:text="Telefono:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
-            android:hint="@string/email"
+            android:hint="@string/tel"
             android:inputType="phone"
             android:background="@android:color/white"
             android:id="@+id/txtTelefono"/>
@@ -85,8 +85,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
@@ -114,16 +113,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salir"
-            android:id="@+id/salir"/>
+            android:id="@+id/btnsalir"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/atras"
-            android:id="@+id/atras"/>
+            android:id="@+id/btnatras"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/siguiente"
-            android:id="@+id/siguiente"/>
+            android:id="@+id/btnsiguiente"/>
     </LinearLayout>
 </LinearLayout>
