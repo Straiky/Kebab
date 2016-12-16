@@ -1,7 +1,11 @@
 package com.ejemplos.kebab;
 
 import android.app.Application;
+import android.content.Intent;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +33,8 @@ public class Cliente extends AppCompatActivity{
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+                System.runFinalization();
                 System.exit(0);
             }
         });
@@ -36,6 +42,23 @@ public class Cliente extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!nom.getText().equals("") || !ape.getText().equals("") || !direc.getText().equals("") || !tel.getText().equals("")|| !cp.getText().equals("")){
+                    Intent intent=new Intent();
+                    intent.putExtra("nombre", nom.getText());
+                    intent.putExtra("apellidos", ape.getText());
+                    intent.putExtra("direccion", direc.getText());
+                    intent.putExtra("telefono", tel.getText());
+                    intent.putExtra("codigoPostal", cp.getText());
+                }else{
+                    if (nom.getText().equals("")){
+                        nom.setText("fhbgjebhw");
+                    }
+                }
             }
         });
     }
