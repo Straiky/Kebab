@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by adminportatil on 14/12/2016.
@@ -18,6 +19,7 @@ import android.widget.EditText;
 public class Cliente extends AppCompatActivity{
     EditText nom, ape, direc, tel, cp;
     Button sig, salir, atras;
+    String nombre, apell, direcc, tele, cop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,19 +49,36 @@ public class Cliente extends AppCompatActivity{
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!nom.getText().equals("") || !ape.getText().equals("") || !direc.getText().equals("") || !tel.getText().equals("")|| !cp.getText().equals("")){
-                    Intent intent=new Intent();
-                    intent.putExtra("nombre", nom.getText());
-                    intent.putExtra("apellidos", ape.getText());
-                    intent.putExtra("direccion", direc.getText());
-                    intent.putExtra("telefono", tel.getText());
-                    intent.putExtra("codigoPostal", cp.getText());
+                nombre=nom.getText().toString();
+                apell=ape.getText().toString();
+                tele=tel.getText().toString();
+                cop=cp.getText().toString();
+                direcc=direc.getText().toString();
+                if (nombre.equals("")||apell.equals("")||tele.equals("")||cop.equals("")||direcc.equals("")){
+                    ponError();
                 }else{
-                    if (nom.getText().equals("")){
-                        nom.setText("fhbgjebhw");
-                    }
+                    Intent intent =new Intent();
+                    intent.putExtra("nombre", nombre);
+                    intent.putExtra("apellido", apell);
+                    intent.putExtra("telefono", tele);
+                    intent.putExtra("codigo_postal", cop);
+                    intent.putExtra("direccion", direcc);
+                    Intent intent=new Intent(this, R.class.)
                 }
             }
         });
+    }
+
+    private void ponError() {
+        if(nom.getText().toString().equals(""))
+            nom.setError("Este campo no puede estar vacio");
+        if (ape.getText().toString().equals(""))
+            ape.setError("Este campo no puede estar vacio");
+        if (tel.getText().toString().equals(""))
+            tel.setError("Este campo no puede estar vacio");
+        if (direc.getText().toString().equals(""))
+            direc.setError("Este campo no puede estar vacio");
+        if (cp.getText().toString().equals(""))
+            cp.setError("Este campo no puede estar vacio");
     }
 }
