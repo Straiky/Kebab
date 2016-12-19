@@ -6,6 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -57,16 +58,21 @@ public class Cliente extends AppCompatActivity{
                 if (nombre.equals("")||apell.equals("")||tele.equals("")||cop.equals("")||direcc.equals("")){
                     ponError();
                 }else{
-                    Intent intent =new Intent();
-                    intent.putExtra("nombre", nombre);
-                    intent.putExtra("apellido", apell);
-                    intent.putExtra("telefono", tele);
-                    intent.putExtra("codigo_postal", cop);
-                    intent.putExtra("direccion", direcc);
-                    Intent intent=new Intent(this, R.class.)
+                    RecogerDatos rd=new RecogerDatos();
+                    rd.setNombre(nombre);
+                    rd.setApellido(apell);
+                    rd.setCodigo_postal(Integer.parseInt(cop));
+                    rd.setDireccion(direcc);
+                    rd.setTelefono(Integer.parseInt(tele));
+                    empiezaSig(null, rd);
                 }
             }
         });
+    }
+
+    private void empiezaSig(View view, RecogerDatos rd) {
+        Intent intent=new Intent(this, Bebidas.class);
+//        intent.putExtra("rd", rd);
     }
 
     private void ponError() {
