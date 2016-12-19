@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cliente"/>
+        <activity android:name=".Menu"/>
+        <activity android:name=".Bebidas"/>
     </application>
 
 </manifest>

@@ -72,6 +72,7 @@ public class Cliente extends AppCompatActivity{
 
     private void empiezaSig(View view, RecogerDatos rd) {
         Intent intent=new Intent(this, Bebidas.class);
+        startActivity(intent);
 //        intent.putExtra("rd", rd);
     }
 
