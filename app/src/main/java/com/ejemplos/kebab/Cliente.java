@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by adminportatil on 14/12/2016.
  */
@@ -21,6 +23,7 @@ public class Cliente extends AppCompatActivity{
     EditText nom, ape, direc, tel, cp;
     Button sig, salir, atras;
     String nombre, apell, direcc, tele, cop;
+    ArrayList al;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +39,7 @@ public class Cliente extends AppCompatActivity{
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                System.runFinalization();
-                System.exit(0);
+                finishAffinity();
             }
         });
         atras.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +73,7 @@ public class Cliente extends AppCompatActivity{
 
     private void empiezaSig(View view, RecogerDatos rd) {
         Intent intent=new Intent(this, Bebidas.class);
+        intent.putExtra("prueba", al);
         startActivity(intent);
 //        intent.putExtra("rd", rd);
     }

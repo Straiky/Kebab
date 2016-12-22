@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
     <Spinner
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25sp"
         android:layout_marginLeft="25sp"
-        android:id="@+id/spnBebidas" />
+        android:id="@+id/spnBebidas"
+        android:background="@android:color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/canti"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="25sp"
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="25sp"
+            android:id="@+id/cantidad"
+            android:background="@android:color/white"/>
+    </LinearLayout>
 </LinearLayout>
