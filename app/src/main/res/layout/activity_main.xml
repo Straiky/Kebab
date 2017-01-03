@@ -74,4 +74,14 @@
         android:layout_above="@+id/btnMaps"
         android:layout_toEndOf="@+id/lblContacto" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/cebanc"
+        android:id="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/lblKebabJuacbar"
+        android:layout_above="@+id/btnEmpezar" />
+
 </RelativeLayout>

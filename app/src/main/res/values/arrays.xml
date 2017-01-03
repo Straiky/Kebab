@@ -8,4 +8,20 @@
         <item>Nestea</item>
         <item>Agua</item>
     </string-array>
+    <string-array name="tipoKebab">
+        <item>Döner</item>
+        <item>Dürüm</item>
+        <item>Lahmacum</item>
+        <item>Shawarma</item>
+        <item>Gyros</item>
+    </string-array>
+    <string-array name="tipoCarne">
+        <item>Cordero</item>
+        <item>Ternera</item>
+        <item>Pollo</item>
+    </string-array>
+    <string-array name="tamaño">
+        <item>Normal</item>
+        <item>Completo</item>
+    </string-array>
 </resources>

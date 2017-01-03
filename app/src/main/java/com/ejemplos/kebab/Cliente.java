@@ -23,11 +23,12 @@ public class Cliente extends AppCompatActivity{
     EditText nom, ape, direc, tel, cp;
     Button sig, salir, atras;
     String nombre, apell, direcc, tele, cop;
-    ArrayList al;
+    ArrayList<String> cliente=new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cliente);
+
         nom=(EditText) findViewById(R.id.txtNombre);
         ape=(EditText) findViewById(R.id.txtApellido);
         direc=(EditText) findViewById(R.id.txtDireccion);
@@ -36,6 +37,7 @@ public class Cliente extends AppCompatActivity{
         atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
+
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,23 +61,21 @@ public class Cliente extends AppCompatActivity{
                 if (nombre.equals("")||apell.equals("")||tele.equals("")||cop.equals("")||direcc.equals("")){
                     ponError();
                 }else{
-                    RecogerDatos rd=new RecogerDatos();
-                    rd.setNombre(nombre);
-                    rd.setApellido(apell);
-                    rd.setCodigo_postal(Integer.parseInt(cop));
-                    rd.setDireccion(direcc);
-                    rd.setTelefono(Integer.parseInt(tele));
-                    empiezaSig(null, rd);
+                    cliente.add(nom.getText().toString());
+                    cliente.add(ape.getText().toString());
+                    cliente.add(direc.getText().toString());
+                    cliente.add(tel.getText().toString());
+                    cliente.add(cp.getText().toString());
+                    empiezaSig(null);
                 }
             }
         });
     }
 
-    private void empiezaSig(View view, RecogerDatos rd) {
-        Intent intent=new Intent(this, Bebidas.class);
-        intent.putExtra("prueba", al);
+    private void empiezaSig(View view) {
+        Intent intent=new Intent(this, Menu.class);
+        intent.putExtra("cliente", cliente);
         startActivity(intent);
-//        intent.putExtra("rd", rd);
     }
 
     private void ponError() {

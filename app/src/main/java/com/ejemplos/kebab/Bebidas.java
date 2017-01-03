@@ -17,9 +17,7 @@ public class Bebidas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bebidas);
         spnBebidas=(Spinner) findViewById(R.id.spnBebidas);
-
         ArrayAdapter adaptador=ArrayAdapter.createFromResource(this, R.array.bebidas, android.R.layout.simple_spinner_item);
-
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnBebidas.setAdapter(adaptador);
     }
