@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -112,7 +113,9 @@ public class Menu  extends AppCompatActivity {
         }
         if (c==1)
             este+=1;
-        factura=este*d;
+
+        factura+=este*d;
+        Toast.makeText(getApplicationContext(), "Este pedido vale "+este*d+". Llevas pedido "+factura, Toast.LENGTH_LONG);
     }
 
     private void empiezaSig(View view) {
