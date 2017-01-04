@@ -18,6 +18,7 @@ public class Menu  extends AppCompatActivity {
     Spinner tipoKebab, tipoCarne, tipoTamanyo;
     String pedido="";
     ArrayList<String> kebabList = new ArrayList<String>();
+    ArrayList<String> cliente=new ArrayList<String>();
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -32,6 +33,8 @@ public class Menu  extends AppCompatActivity {
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
 
+
+
         ArrayAdapter adpTipoKebab=ArrayAdapter.createFromResource(this, R.array.TipoKebab, android.R.layout.simple_spinner_item);
         ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
         ArrayAdapter adpTipoTamanyo=ArrayAdapter.createFromResource(this, R.array.TipoTamanyo, android.R.layout.simple_spinner_item);
@@ -45,13 +48,18 @@ public class Menu  extends AppCompatActivity {
 
 
         añadir.setOnClickListener(new View.OnClickListener() {
+
+            String tipo=tipoKebab.getSelectedItem().toString();
+            String tam=(tipoTamanyo.getSelectedItem().toString());
+            String carne=(tipoCarne.getSelectedItem().toString());
+            Integer cant=Integer.parseInt(cantidad.getText().toString());
             @Override
             public void onClick(View v) {
                 pedido="";
-                pedido+=(tipoTamanyo.getSelectedItem().toString())+" ";
-                pedido+=(tipoCarne.getSelectedItem().toString())+" ";
-                pedido+=(tipoKebab.getSelectedItem().toString())+" ";
-                pedido+=(cantidad.getText().toString());
+                pedido+=tipo+" ";
+                pedido+=tam+" ";
+                pedido+=carne+" ";
+                pedido+=cant;
                 kebabList.add(pedido);
             }
 
