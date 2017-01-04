@@ -63,17 +63,18 @@ public class Cliente extends AppCompatActivity{
                 }else{
                     cliente.add(nombre);
                     cliente.add(apell);
-                    cliente.add();
+                    cliente.add(direcc);
                     cliente.add(tele);
+                    cliente.add(cop);
                 }
             }
         });
     }
 
-    private void empiezaSig(View view, RecogerDatos rd) {
+    private void empiezaSig(View view) {
         Intent intent=new Intent(this, Menu.class);
+        intent.putExtra("cliente", cliente);
         startActivity(intent);
-//        intent.putExtra("rd", rd);
     }
 
     private void ponError() {
