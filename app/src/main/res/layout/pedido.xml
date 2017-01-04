@@ -22,27 +22,108 @@
             android:id="@+id/lblPedido"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />
+
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.07" >
+            android:layout_height="wrap_content">
 
             <RadioButton
-                android:text="RadioButton"
+                android:text="@string/rdbtarjeta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton2"
-                android:layout_weight="1" />
+                android:id="@+id/rdbTarjeta"
+                android:layout_weight="1"
+                android:textColor="@android:color/background_light"
+                android:button="@android:drawable/btn_radio" />
 
             <RadioButton
-                android:text="RadioButton"
+                android:text="@string/rdbContado"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton"
-                android:layout_weight="1" />
+                android:layout_height="36dp"
+                android:id="@+id/rdbContado"
+                android:button="@android:drawable/btn_radio"
+                android:textColor="@android:color/background_light" />
         </RadioGroup>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/lbltarjeta"
+            android:textColor="@android:color/white"
+            android:id="@+id/NºTarjeta" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:hint="@string/tarjehint"
+            android:background="@android:color/white"
+            android:id="@+id/txtApellido"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/fechac"
+            android:textColor="@android:color/white"
+            android:id="@+id/lblFecha" />
+        <EditText
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:hint="@string/FechaHint"
+            android:inputType="textPostalAddress"
+            android:background="@android:color/white"
+            android:id="@+id/txtDireccion"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="75sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/lbldigitos"
+            android:textColor="@android:color/white"/>
+        <EditText
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:hint="@string/digitosHint"
+            android:inputType="phone"
+            android:background="@android:color/white"
+            android:id="@+id/txtTelefono"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 
 
 
@@ -50,7 +131,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="450dp">
+        android:layout_marginTop="250dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

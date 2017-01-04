@@ -20,4 +20,12 @@
     <string name="lblPista">Cuantos menus quieries?</string>
     <string name="Aceptar">Aceptar</string>
     <string name="lblPedido">Resumen del pedido</string>
+    <string name="rdbtarjeta">T.Credito</string>
+    <string name="rdbContado">Contado</string>
+    <string name="lbltarjeta">NºTarjeta</string>
+    <string name="tarjehint">Introduzca el numero de tarjeta</string>
+    <string name="FechaHint">Introduzca la fecha de caducidad</string>
+    <string name="lbldigitos">3 Digitos</string>
+    <string name="digitosHint">Introduzca los 3 digitos de atras</string>
+    <string name="fechac">fecha de c</string>
 </resources>
