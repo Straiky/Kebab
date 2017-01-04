@@ -123,6 +123,9 @@ public class Menu  extends AppCompatActivity {
 
     private void empiezaSig(View view) {
         Intent intent=new Intent(this, Bebidas.class);
+        intent.putExtra("pedido", kebabList);
+        intent.putExtra("cliente", cliente);
+        intent.putExtra("factura", factura);
         startActivity(intent);
     }
 }

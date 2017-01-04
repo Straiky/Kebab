@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,11 @@ import java.util.ArrayList;
 public class Bebidas extends AppCompatActivity {
     Spinner spnBebidas;
     Button sig, salir, atras,añadir;
-
+    Double facturaBebida=0.0;
     ArrayList<String> bebidaList = new ArrayList<String>();
+    ArrayList<String> kebabList = new ArrayList<String>();
+    ArrayList<String> cliente = new ArrayList<String>();
+    factura
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,23 @@ public class Bebidas extends AppCompatActivity {
             public void onClick(View v) {
 
                 bebidaList.add(spnBebidas.getSelectedItem().toString());
+                switch (spnBebidas.getSelectedItemPosition()){
+                    case 0:
+                    case 1:
+                    case 2:
+                        facturaBebida+=1;
+                        Toast.makeText(getApplicationContext(), "Has añadido 1 euro", Toast.LENGTH_LONG);
+                        break;
+                    case 3:
+                    case 4:
+                        facturaBebida+=2;
+                        Toast.makeText(getApplicationContext(), "Has añadido 2 euros", Toast.LENGTH_LONG);
+                        break;
+                    case 5:
+                        facturaBebida+=0.5;
+                        Toast.makeText(getApplicationContext(), "Has añadido 0.5 euros", Toast.LENGTH_LONG);
+                        break;
+                }
 
             }
 
