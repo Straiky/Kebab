@@ -15,5 +15,6 @@
     <string name="atras">Atras</string>
     <string name="siguiente">Siguiente</string>
     <string name="tel">Telefono</string>
-    <string name="canti">Introduce cantidad</string>
+    <string name="canti">Introduce Cantidad</string>
+    <string name="btnAñadir">Añadir</string>
 </resources>

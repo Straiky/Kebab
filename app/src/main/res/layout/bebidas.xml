@@ -30,4 +30,32 @@
             android:id="@+id/cantidad"
             android:background="@android:color/white"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="360dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir"
+            android:id="@+id/btnsalir"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/atras"
+            android:id="@+id/btnatras"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/siguiente"
+            android:id="@+id/btnsiguiente"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAñadir"
+            android:id="@+id/btnAñadir"/>
+
+    </LinearLayout>
 </LinearLayout>

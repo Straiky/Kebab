@@ -1,36 +1,87 @@
 package com.ejemplos.kebab;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
-/**
- * Created by adminportatil on 16/12/2016.
- */
+import java.util.ArrayList;
 
-public class Menu extends AppCompatActivity{
-    Spinner tk,tam, tCar;
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+public class Menu  extends AppCompatActivity {
+    Button sig, salir, atras,añadir;
+    EditText cantidad;
+    Spinner tipoKebab, tipoCarne, tipoTamanyo;
+
+    ArrayList<String> kebabList = new ArrayList<String>();
+
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listakebabs);
+        setContentView(R.layout.menu);
 
-        tk=(Spinner) findViewById(R.id.spnTipoKebab);
-        tam=(Spinner) findViewById(R.id.spnTamaño);
-        tCar=(Spinner) findViewById(R.id.spnCarne);
+        añadir=(Button) findViewById(R.id.btnAñadir);
+        cantidad=(EditText) findViewById(R.id.txtCantidad);
+        tipoKebab=(Spinner) findViewById(R.id.spnTipoKebab);
+        tipoCarne=(Spinner) findViewById(R.id.spnTipoCarne);
+        tipoTamanyo=(Spinner) findViewById(R.id.spnrTamanyo);
+        atras=(Button) findViewById(R.id.btnatras);
+        sig=(Button) findViewById(R.id.btnsiguiente);
+        salir=(Button) findViewById(R.id.btnsalir);
 
-        ArrayAdapter adaptador=ArrayAdapter.createFromResource(this, R.array.tipoKebab, android.R.layout.simple_spinner_item);
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tk.setAdapter(adaptador);
+        ArrayAdapter adpTipoKebab=ArrayAdapter.createFromResource(this, R.array.TipoKebab, android.R.layout.simple_spinner_item);
+        ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
+        ArrayAdapter adpTipoTamanyo=ArrayAdapter.createFromResource(this, R.array.TipoTamanyo, android.R.layout.simple_spinner_item);
 
-        ArrayAdapter adapter2=ArrayAdapter.createFromResource(this, R.array.tamaño, android.R.layout.simple_spinner_item);
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tam.setAdapter(adapter2);
+        adpTipoKebab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoKebab.setAdapter(adpTipoKebab);
+        adpTipoCarne.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoCarne.setAdapter(adpTipoCarne);
+        adpTipoTamanyo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoTamanyo.setAdapter(adpTipoTamanyo);
 
-        ArrayAdapter adapter3=ArrayAdapter.createFromResource(this, R.array.tipoCarne, android.R.layout.simple_spinner_item);
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tCar.setAdapter(adapter3);
+
+        añadir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                kebabList.add(tipoTamanyo.getSelectedItem().toString());
+                kebabList.add(tipoCarne.getSelectedItem().toString());
+                kebabList.add(tipoKebab.getSelectedItem().toString());
+            }
+
+        });
+
+
+
+
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
+                System.runFinalization();
+                System.exit(0);
+            }
+        });
+        atras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            empiezaSig(null);
+            }
+        });
+
+    }
+    private void empiezaSig(View view) {
+        Intent intent=new Intent(this, Bebidas.class);
+        startActivity(intent);
     }
 }
