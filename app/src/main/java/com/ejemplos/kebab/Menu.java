@@ -49,13 +49,19 @@ public class Menu  extends AppCompatActivity {
 
 
         añadir.setOnClickListener(new View.OnClickListener() {
-
-            String tipo=tipoKebab.getSelectedItem().toString();
-            String tam=(tipoTamanyo.getSelectedItem().toString());
-            String carne=(tipoCarne.getSelectedItem().toString());
-            Integer cant=Integer.parseInt(cantidad.getText().toString());
             @Override
             public void onClick(View v) {
+                String tipo=tipoKebab.getSelectedItem().toString();
+                String tam=(tipoTamanyo.getSelectedItem().toString());
+                String carne=(tipoCarne.getSelectedItem().toString());
+                Integer cant;
+
+                if(cantidad.getText().toString().equals("")){
+                    cant=0;
+                }else {
+                    cant = Integer.parseInt(cantidad.getText().toString());
+                }
+
                 pedido="";
                 pedido+=tipo+" ";
                 pedido+=tam+" ";
@@ -118,7 +124,7 @@ public class Menu  extends AppCompatActivity {
             este+=1;
 
         factura+=este*d;
-        Toast.makeText(getApplicationContext(), "Este pedido vale "+este*d+". Llevas pedido "+factura, Toast.LENGTH_LONG);
+        Toast.makeText(getApplicationContext(), "Este pedido vale "+este*d+". Llevas pedido "+factura, Toast.LENGTH_LONG).show();
     }
 
     private void empiezaSig(View view) {
