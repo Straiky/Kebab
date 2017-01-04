@@ -23,11 +23,12 @@ public class Cliente extends AppCompatActivity{
     EditText nom, ape, direc, tel, cp;
     Button sig, salir, atras;
     String nombre, apell, direcc, tele, cop;
-    ArrayList<String> cliente = new ArrayList<String>();
+    ArrayList<String> cliente = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cliente);
+
         nom=(EditText) findViewById(R.id.txtNombre);
         ape=(EditText) findViewById(R.id.txtApellido);
         direc=(EditText) findViewById(R.id.txtDireccion);
@@ -36,6 +37,7 @@ public class Cliente extends AppCompatActivity{
         atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
+
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -18,20 +18,25 @@ import java.util.ArrayList;
 public class Bebidas extends AppCompatActivity {
     Spinner spnBebidas;
     Button sig, salir, atras,añadir;
-    Double facturaBebida=0.0;
+    Double factura =0.0;
     ArrayList<String> bebidaList = new ArrayList<String>();
     ArrayList<String> kebabList = new ArrayList<String>();
     ArrayList<String> cliente = new ArrayList<String>();
-    factura
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bebidas);
+
         spnBebidas=(Spinner) findViewById(R.id.spnBebidas);
         atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
         añadir=(Button) findViewById(R.id.btnAñadir);
+
+        kebabList=getIntent().getStringArrayListExtra("pedido");
+        cliente=getIntent().getStringArrayListExtra("cliente");
+        factura=getIntent().getExtras().getDouble("factura");
+
         ArrayAdapter adaptador=ArrayAdapter.createFromResource(this, R.array.bebidas, android.R.layout.simple_spinner_item);
 
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -67,16 +72,16 @@ public class Bebidas extends AppCompatActivity {
                     case 0:
                     case 1:
                     case 2:
-                        facturaBebida+=1;
+                        factura +=1;
                         Toast.makeText(getApplicationContext(), "Has añadido 1 euro", Toast.LENGTH_LONG);
                         break;
                     case 3:
                     case 4:
-                        facturaBebida+=2;
+                        factura +=2;
                         Toast.makeText(getApplicationContext(), "Has añadido 2 euros", Toast.LENGTH_LONG);
                         break;
                     case 5:
-                        facturaBebida+=0.5;
+                        factura +=0.5;
                         Toast.makeText(getApplicationContext(), "Has añadido 0.5 euros", Toast.LENGTH_LONG);
                         break;
                 }
@@ -88,6 +93,10 @@ public class Bebidas extends AppCompatActivity {
     }
     private void empiezaSig(View view) {
         Intent intent=new Intent(this, MainActivity.class);
+        intent.putExtra("cliente", cliente);
+        intent.putExtra("pedido", kebabList);
+        intent.putExtra("bebidas", bebidaList);
+        intent.putExtra("factura", factura);
         startActivity(intent);
     }
 }

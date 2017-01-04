@@ -34,7 +34,7 @@ public class Menu  extends AppCompatActivity {
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
 
-
+        cliente=getIntent().getStringArrayListExtra("cliente");
 
         ArrayAdapter adpTipoKebab=ArrayAdapter.createFromResource(this, R.array.TipoKebab, android.R.layout.simple_spinner_item);
         ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
