@@ -19,7 +19,7 @@ public class Menu  extends AppCompatActivity {
     String pedido="";
     ArrayList<String> kebabList = new ArrayList<String>();
     ArrayList<String> cliente=new ArrayList<String>();
-    Integer factura=0;
+    Double factura=0.0;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
@@ -112,6 +112,7 @@ public class Menu  extends AppCompatActivity {
         }
         if (c==1)
             este+=1;
+        factura=este*d;
     }
 
     private void empiezaSig(View view) {
