@@ -10,11 +10,11 @@
     </string-array>
 
     <string-array name="TipoKebab" >
-        <item>Döner</item>
-        <item>Dürüm</item>
-        <item>Lahmacum</item>
-        <item>Shawarma</item>
-        <item>Gyros</item>
+        <item>Döner, 4€</item>
+        <item>Dürüm, 5€</item>
+        <item>Lahmacum, 5€</item>
+        <item>Shawarma, 6€</item>
+        <item>Gyros, 4€</item>
     </string-array>
 
     <string-array name="TipoCarne" >
@@ -24,6 +24,6 @@
     </string-array>
     <string-array name="TipoTamanyo" >
         <item>Normal</item>
-        <item>Completo</item>
+        <item>Completo, +1€</item>
     </string-array>
 </resources>

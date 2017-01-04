@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/menu"
@@ -32,19 +33,28 @@
         android:layout_marginTop="7dp"
         android:gravity="start" />
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="7dp">
+
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/txtCantidad"
-        android:background="@android:drawable/edit_text"
-        android:layout_marginRight="150dp" />
+        android:background="@android:drawable/edit_text" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/lblPista"
+        android:textColor="@android:color/background_light"
+        android:layout_marginLeft="50dp"
+        android:text="@string/lblPista" />
+
+</LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -57,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="185dp">
+        android:layout_marginTop="160dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

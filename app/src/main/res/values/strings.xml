@@ -17,4 +17,5 @@
     <string name="tel">Telefono</string>
     <string name="canti">Introduce Cantidad</string>
     <string name="btnAñadir">Añadir</string>
+    <string name="lblPista">Cuantos menus quieries?</string>
 </resources>
