@@ -47,7 +47,7 @@ public class Menu  extends AppCompatActivity {
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pedido="";
                 pedido+=(tipoTamanyo.getSelectedItem().toString())+" ";
                 pedido+=(tipoCarne.getSelectedItem().toString())+" ";
                 pedido+=(tipoKebab.getSelectedItem().toString())+" ";
