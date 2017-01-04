@@ -18,4 +18,6 @@
     <string name="canti">Introduce Cantidad</string>
     <string name="btnAñadir">Añadir</string>
     <string name="lblPista">Cuantos menus quieries?</string>
+    <string name="Aceptar">Aceptar</string>
+    <string name="lblPedido">Resumen del pedido</string>
 </resources>
