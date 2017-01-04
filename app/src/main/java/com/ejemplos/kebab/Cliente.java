@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by adminportatil on 14/12/2016.
  */
@@ -21,6 +23,7 @@ public class Cliente extends AppCompatActivity{
     EditText nom, ape, direc, tel, cp;
     Button sig, salir, atras;
     String nombre, apell, direcc, tele, cop;
+    ArrayList<String> cliente = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +61,10 @@ public class Cliente extends AppCompatActivity{
                 if (nombre.equals("")||apell.equals("")||tele.equals("")||cop.equals("")||direcc.equals("")){
                     ponError();
                 }else{
-                    RecogerDatos rd=new RecogerDatos();
-                    rd.setNombre(nombre);
-                    rd.setApellido(apell);
-                    rd.setCodigo_postal(Integer.parseInt(cop));
-                    rd.setDireccion(direcc);
-                    rd.setTelefono(Integer.parseInt(tele));
-                    empiezaSig(null, rd);
+                    cliente.add(nombre);
+                    cliente.add(apell);
+                    cliente.add();
+                    cliente.add(tele);
                 }
             }
         });
