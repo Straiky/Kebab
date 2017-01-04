@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bebidas" >
-        <item>Coca Cola</item>
-        <item>Kas Naranja</item>
-        <item>Kas Limon</item>
-        <item>Aquarius</item>
-        <item>Nestea</item>
-        <item>Agua</item>
+        <item>Coca Cola, 1€</item>
+        <item>Kas Naranja, 1€</item>
+        <item>Kas Limon, 1€</item>
+        <item>Aquarius, 2€</item>
+        <item>Nestea, 2€</item>
+        <item>Agua, 0.5€</item>
     </string-array>
 
     <string-array name="TipoKebab" >
