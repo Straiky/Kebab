@@ -63,6 +63,9 @@ public class Menu  extends AppCompatActivity {
                 pedido+=cant;
                 kebabList.add(pedido);
                 añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
+                tipoKebab.setSelection(0);
+                tipoTamanyo.setSelection(0);
+                tipoCarne.setSelection(0);
             }
 
         });
