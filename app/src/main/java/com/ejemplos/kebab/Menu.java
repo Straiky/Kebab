@@ -16,7 +16,7 @@ public class Menu  extends AppCompatActivity {
     Button sig, salir, atras,añadir;
     EditText cantidad;
     Spinner tipoKebab, tipoCarne, tipoTamanyo;
-
+    String pedido="";
     ArrayList<String> kebabList = new ArrayList<String>();
 
     protected void onCreate(Bundle savedInstanceState){
@@ -48,9 +48,11 @@ public class Menu  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                kebabList.add(tipoTamanyo.getSelectedItem().toString());
-                kebabList.add(tipoCarne.getSelectedItem().toString());
-                kebabList.add(tipoKebab.getSelectedItem().toString());
+                pedido+=(tipoTamanyo.getSelectedItem().toString())+" ";
+                pedido+=(tipoCarne.getSelectedItem().toString())+" ";
+                pedido+=(tipoKebab.getSelectedItem().toString())+" ";
+                pedido+=(cantidad.getText().toString());
+                kebabList.add(pedido);
             }
 
         });

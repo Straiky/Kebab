@@ -66,6 +66,7 @@ public class Cliente extends AppCompatActivity{
                     cliente.add(direcc);
                     cliente.add(tele);
                     cliente.add(cop);
+                    empiezaSig(null);
                 }
             }
         });
