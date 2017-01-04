@@ -18,7 +18,8 @@ public class Menu  extends AppCompatActivity {
     Spinner tipoKebab, tipoCarne, tipoTamanyo;
     String pedido="";
     ArrayList<String> kebabList = new ArrayList<String>();
-
+    ArrayList<String> cliente=new ArrayList<String>();
+    Double factura=0.0;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
@@ -31,6 +32,8 @@ public class Menu  extends AppCompatActivity {
         atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
+
+
 
         ArrayAdapter adpTipoKebab=ArrayAdapter.createFromResource(this, R.array.TipoKebab, android.R.layout.simple_spinner_item);
         ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
@@ -45,14 +48,20 @@ public class Menu  extends AppCompatActivity {
 
 
         añadir.setOnClickListener(new View.OnClickListener() {
+
+            String tipo=tipoKebab.getSelectedItem().toString();
+            String tam=(tipoTamanyo.getSelectedItem().toString());
+            String carne=(tipoCarne.getSelectedItem().toString());
+            Integer cant=Integer.parseInt(cantidad.getText().toString());
             @Override
             public void onClick(View v) {
                 pedido="";
-                pedido+=(tipoTamanyo.getSelectedItem().toString())+" ";
-                pedido+=(tipoCarne.getSelectedItem().toString())+" ";
-                pedido+=(tipoKebab.getSelectedItem().toString())+" ";
-                pedido+=(cantidad.getText().toString());
+                pedido+=tipo+" ";
+                pedido+=tam+" ";
+                pedido+=carne+" ";
+                pedido+=cant;
                 kebabList.add(pedido);
+                añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
             }
 
         });
@@ -82,6 +91,30 @@ public class Menu  extends AppCompatActivity {
         });
 
     }
+
+    private void añadeFactura(Integer a, Integer c, Integer d) {
+        Double este=0.0;
+        switch (a){
+            case 0:
+                este+=4;
+                break;
+            case 1:
+                este+=5;
+                break;
+            case 2:
+                este+=5.5;
+                break;
+            case 3:
+                este+=6;
+                break;
+            case 4:
+                este+=4;
+        }
+        if (c==1)
+            este+=1;
+        factura=este*d;
+    }
+
     private void empiezaSig(View view) {
         Intent intent=new Intent(this, Bebidas.class);
         startActivity(intent);
