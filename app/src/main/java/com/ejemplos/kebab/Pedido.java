@@ -56,7 +56,7 @@ public class Pedido extends AppCompatActivity {
         txtTarjeta.requestFocus();
         lblPedido.setText("");
         if (pedido==null) {
-            lblPedidobebidas.setText("No has pedido ningun Kebab");
+            lblPedido.setText("No has pedido ningun Kebab");
         } else {
             for (int i = 0; i < pedido.size(); i++) {
                 lblPedido.setText((String) lblPedido.getText() + pedido.get(i) + "\r\n");

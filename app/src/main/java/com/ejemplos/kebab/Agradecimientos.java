@@ -13,32 +13,33 @@ import android.widget.TextView;
  * Created by adminportatil on 07/01/2017.
  */
 
-public class Agradecimientos extends AppCompatActivity{
+public class Agradecimientos extends AppCompatActivity {
     Button salir, menu;
     Double factura;
     ImageView android, vale;
     TextView premio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.agradecimientos);
 
-        salir=(Button) findViewById(R.id.btnsalir);
-        menu=(Button) findViewById(R.id.btnmenuprincipal);
-        factura=getIntent().getExtras().getDouble("factura");
-        android=(ImageView) findViewById(R.id.imgRegalo1);
-        vale=(ImageView) findViewById(R.id.imgRegalo2);
-        premio=(TextView) findViewById(R.id.textoRegalo);
+        salir = (Button) findViewById(R.id.btnsalir);
+        menu = (Button) findViewById(R.id.btnmenuprincipal);
+        factura = getIntent().getExtras().getDouble("factura");
+        android = (ImageView) findViewById(R.id.imgRegalo1);
+        vale = (ImageView) findViewById(R.id.imgRegalo2);
+        premio = (TextView) findViewById(R.id.textoRegalo);
 
-        if (factura<23){
+        if (factura < 23) {
             vale.setVisibility(View.GONE);
             android.setVisibility(View.GONE);
-        }else{
-            if(factura>=23 & factura<33){
+        } else {
+            if (factura >= 23 & factura < 33) {
                 vale.setVisibility(View.GONE);
                 android.setVisibility(View.VISIBLE);
                 premio.setText("Enhorabuena, por realizar una compra superior a 23€ te ragalamos con la compra un muñeco de Android. Enhorabuena.");
-            }else{
+            } else {
                 android.setVisibility(View.VISIBLE);
                 vale.setVisibility(View.VISIBLE);
                 premio.setText("Enhorabuena, por realizar una compra superior a 33€ te ragalamos con la compra un muñeco de Android y un Vale para comer en el comedor de Cebanc. Enhorabuena.");
@@ -57,7 +58,8 @@ public class Agradecimientos extends AppCompatActivity{
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(null, MainActivity.class);
+                Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
