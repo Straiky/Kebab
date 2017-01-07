@@ -64,16 +64,6 @@
         android:layout_alignStart="@+id/btnMaps"
         android:id="@+id/btnContacto" />
 
-    <Button
-        android:text="@string/btnEmpezar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnEmpezar"
-        tools:ignore="HardcodedText"
-        android:layout_marginBottom="28dp"
-        android:layout_above="@+id/btnMaps"
-        android:layout_toEndOf="@+id/lblContacto" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,5 +73,15 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/lblKebabJuacbar"
         android:layout_above="@+id/btnEmpezar" />
+
+    <Button
+        android:text="@string/btnEmpezar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmpezar"
+        tools:ignore="HardcodedText"
+        android:layout_marginBottom="33dp"
+        android:layout_above="@+id/btnMaps"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
