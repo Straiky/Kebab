@@ -31,7 +31,11 @@ public class Pedido extends AppCompatActivity{
 
         Intent intent= getIntent();
         pedido=intent.getCharSequenceArrayListExtra("pedido");
-        bebidas=intent.getCharSequenceArrayListExtra("bebidas");
+        try {
+            bebidas = intent.getCharSequenceArrayListExtra("bebidas");
+        }catch (Exception e){
+            bebidas.add("No has pedido ningúna bebida");
+        }
 
         txtDig=(EditText) findViewById(R.id.txtDigitos);
         txtFecha=(EditText) findViewById(R.id.txtFecha);

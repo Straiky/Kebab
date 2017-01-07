@@ -103,7 +103,8 @@ public class Bebidas extends AppCompatActivity {
         Intent intent = new Intent(this, Pedido.class);
         intent.putExtra("cliente", cliente);
         intent.putExtra("pedido", kebabList);
-        intent.putExtra("bebidas", bebidaList);
+        if (!bebidaList.isEmpty())
+            intent.putExtra("bebidas", bebidaList);
         intent.putExtra("factura", factura);
         startActivity(intent);
     }
