@@ -142,7 +142,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblTotal"/>
+            android:id="@+id/lblTotal"
+            android:text="gegehththt"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <LinearLayout

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class Pedido extends AppCompatActivity{
     RadioButton rdbTarjeta, rdbContado;
     EditText txtTarjeta, txtFecha, txtDig;
-    TextView lblPedido, lblTar, lblFecha, lblDig, lblTotal;
+    TextView lblPedido, lblPedidobebidas, lblTar, lblFecha, lblDig, lblTotal;
     ArrayList pedido, bebidas;
     Button salir, atras, aceptar;
     @Override
@@ -38,6 +38,7 @@ public class Pedido extends AppCompatActivity{
         rdbContado=(RadioButton) findViewById(R.id.rdbContado);
         rdbTarjeta=(RadioButton) findViewById(R.id.rdbTarjeta);
         lblPedido=(TextView) findViewById(R.id.lblPedidoRealizado);
+        lblPedidobebidas=(TextView) findViewById(R.id.lblBebidasRealizadas);
         lblTar=(TextView) findViewById(R.id.NºTarjeta);
         lblFecha=(TextView) findViewById(R.id.lblFecha);
         lblDig=(TextView) findViewById(R.id.lblDigitos);
@@ -51,7 +52,11 @@ public class Pedido extends AppCompatActivity{
         for(int i=0; i<pedido.size(); i++){
             lblPedido.setText((String)lblPedido.getText()+pedido.get(i)+"\r\n");
         }
-        lblTotal.setText((String)intent.getExtras().getString("factura"));
+        lblPedidobebidas.setText("");
+        for(int j=0; j<pedido.size(); j++){
+            lblPedidobebidas.setText((String)lblPedidobebidas.getText()+bebidas.get(j)+"\r\n");
+        }
+        lblTotal.setText(""+intent.getExtras().getDouble("factura"));
 
         rdbContado.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

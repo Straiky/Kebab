@@ -61,18 +61,19 @@ public class Menu  extends AppCompatActivity {
                 }else {
                     cant = Integer.parseInt(cantidad.getText().toString());
                 }
-
-                pedido="";
-                pedido+=tipo+" ";
-                pedido+=tam+" ";
-                pedido+=carne+" ";
-                pedido+=cant;
-                kebabList.add(pedido);
-                añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
-                tipoKebab.setSelection(0);
-                tipoTamanyo.setSelection(0);
-                tipoCarne.setSelection(0);
-                cantidad.setText("0");
+                if(cant!=0) {
+                    pedido = "";
+                    pedido += tipo + " ";
+                    pedido += tam + " ";
+                    pedido += carne + " ";
+                    pedido += cant;
+                    kebabList.add(pedido);
+                    añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
+                    tipoKebab.setSelection(0);
+                    tipoTamanyo.setSelection(0);
+                    tipoCarne.setSelection(0);
+                    cantidad.setText("0");
+                }
             }
 
         });
