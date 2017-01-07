@@ -21,6 +21,7 @@
         <activity android:name=".Bebidas"/>
         <activity android:name=".localizacion"/>
         <activity android:name=".Pedido"/>
+        <activity android:name=".Agradecimientos"/>
         <uses-library android:name=
             "com.google.android.maps" />
     </application>

@@ -28,4 +28,6 @@
     <string name="lbldigitos">3 Digitos</string>
     <string name="digitosHint">Introduzca los 3 digitos de atras</string>
     <string name="fechac">fecha de c</string>
+    <string name="agradecer">Gracias por realizar su compra.</string>
+    <string name="btnMenuPrincipal">Menu Principal</string>
 </resources>

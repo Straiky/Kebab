@@ -23,6 +23,7 @@ public class Pedido extends AppCompatActivity{
     TextView lblPedido, lblPedidobebidas, lblTar, lblFecha, lblDig, lblTotal;
     ArrayList pedido, bebidas;
     Button salir, atras, aceptar;
+    Double factura;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +57,8 @@ public class Pedido extends AppCompatActivity{
         for(int j=0; j<pedido.size(); j++){
             lblPedidobebidas.setText((String)lblPedidobebidas.getText()+bebidas.get(j)+"\r\n");
         }
-        lblTotal.setText(""+intent.getExtras().getDouble("factura"));
+        factura=intent.getExtras().getDouble("factura");
+        lblTotal.setText(""+factura);
 
         rdbContado.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -95,8 +97,15 @@ public class Pedido extends AppCompatActivity{
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if ((rdbTarjeta.isChecked() & !txtTarjeta.getText().toString().equals("") & !txtFecha.getText().toString().equals("") & !txtDig.getText().toString().equals("")) | rdbContado.isChecked()){
+                    empiezaSig(null);
+                }
             }
         });
+    }
+    private void empiezaSig(View view) {
+        Intent intent1 = new Intent(this, Agradecimientos.class);
+        intent1.putExtra("factura", factura);
+        startActivity(intent1);
     }
 }
