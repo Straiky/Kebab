@@ -28,7 +28,9 @@
             android:layout_marginTop="25sp"
             android:layout_marginLeft="25sp"
             android:id="@+id/cantidad"
-            android:background="@android:color/white"/>
+            android:inputType="number"
+            android:background="@android:color/white"
+            android:text="0" />
     </LinearLayout>
 
     <LinearLayout

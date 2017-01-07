@@ -72,6 +72,7 @@ public class Menu  extends AppCompatActivity {
                 tipoKebab.setSelection(0);
                 tipoTamanyo.setSelection(0);
                 tipoCarne.setSelection(0);
+                cantidad.setText("0");
             }
 
         });

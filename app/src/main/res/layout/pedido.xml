@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    android:weightSum="1">
+    android:weightSum="22">
 
     <LinearLayout
         android:layout_width="332dp"
@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"
-        android:layout_weight="0.07">
+        android:layout_weight="3">
 
 
         <TextView
@@ -49,7 +49,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
@@ -64,13 +65,15 @@
             android:layout_marginTop="15sp"
             android:hint="@string/tarjehint"
             android:background="@android:color/white"
-            android:id="@+id/txtApellido"/>
+            android:id="@+id/txtNumTarjeta"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
@@ -80,58 +83,73 @@
             android:textColor="@android:color/white"
             android:id="@+id/lblFecha" />
         <EditText
-            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
             android:hint="@string/FechaHint"
-            android:inputType="textPostalAddress"
             android:background="@android:color/white"
-            android:id="@+id/txtDireccion"/>
+            android:id="@+id/txtFecha"
+            android:layout_width="125sp"
+            android:inputType="date" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
             android:layout_marginTop="15sp"
             android:text="@string/lbldigitos"
+            android:id="@+id/lblDigitos"
             android:textColor="@android:color/white"/>
         <EditText
-            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
             android:hint="@string/digitosHint"
-            android:inputType="phone"
+            android:inputType="number"
             android:background="@android:color/white"
-            android:id="@+id/txtTelefono"/>
+            android:id="@+id/txtDigitos"
+            android:layout_width="50sp" />
     </LinearLayout>
 
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/lblPedidoRealizado"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:layout_weight="3"/>
 
-
+    <TextView
+        android:id="@+id/lblBebidasRealizadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp"
+        android:text="lblBebidasRealizadas"
+        android:textColor="@android:color/white"
+        android:layout_weight="3"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom|right">
         <TextView
-            android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:layout_weight="1" />
+            android:id="@+id/lblTotal"/>
     </LinearLayout>
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="250dp">
+        android:layout_weight="1">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

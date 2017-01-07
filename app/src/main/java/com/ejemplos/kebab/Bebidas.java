@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class Bebidas extends AppCompatActivity {
     Spinner spnBebidas;
     Button sig, salir, atras,añadir;
     Double factura =0.0;
+    EditText canti;
     ArrayList<String> bebidaList = new ArrayList<String>();
     ArrayList<String> kebabList = new ArrayList<String>();
     ArrayList<String> cliente = new ArrayList<String>();
@@ -32,6 +34,7 @@ public class Bebidas extends AppCompatActivity {
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
         añadir=(Button) findViewById(R.id.btnAñadir);
+        canti=(EditText) findViewById(R.id.cantidad);
 
         kebabList=getIntent().getStringArrayListExtra("pedido");
         cliente=getIntent().getStringArrayListExtra("cliente");
@@ -68,31 +71,33 @@ public class Bebidas extends AppCompatActivity {
             public void onClick(View v) {
 
                 bebidaList.add(spnBebidas.getSelectedItem().toString());
+                Toast.makeText(getApplicationContext(),""+spnBebidas.getSelectedItemPosition(), Toast.LENGTH_LONG).show();
                 switch (spnBebidas.getSelectedItemPosition()){
                     case 0:
                     case 1:
                     case 2:
-                        factura +=1;
-                        Toast.makeText(getApplicationContext(), "Has añadido 1 euro", Toast.LENGTH_LONG);
+                        factura +=(Integer.parseInt(canti.getText().toString()));
+                        Toast.makeText(getApplicationContext(), "Has añadido "+canti.getText().toString()+" euro", Toast.LENGTH_LONG).show();
                         break;
                     case 3:
                     case 4:
-                        factura +=2;
-                        Toast.makeText(getApplicationContext(), "Has añadido 2 euros", Toast.LENGTH_LONG);
+                        factura +=(2*Integer.parseInt(canti.getText().toString()));
+                        Toast.makeText(getApplicationContext(), "Has añadido "+ 2*Integer.parseInt(canti.getText().toString())+" euros", Toast.LENGTH_LONG).show();
                         break;
                     case 5:
-                        factura +=0.5;
-                        Toast.makeText(getApplicationContext(), "Has añadido 0.5 euros", Toast.LENGTH_LONG);
+                        factura +=(0.5*Integer.parseInt(canti.getText().toString()));
+                        Toast.makeText(getApplicationContext(), "Has añadido "+ 0.5*Integer.parseInt(canti.getText().toString())+" euros", Toast.LENGTH_LONG).show();
                         break;
                 }
-
+                spnBebidas.setSelection(0);
+                canti.setText("0");
             }
 
         });
 
     }
     private void empiezaSig(View view) {
-        Intent intent=new Intent(this, MainActivity.class);
+        Intent intent=new Intent(this, Pedido.class);
         intent.putExtra("cliente", cliente);
         intent.putExtra("pedido", kebabList);
         intent.putExtra("bebidas", bebidaList);
