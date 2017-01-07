@@ -19,7 +19,6 @@
         <activity android:name=".Cliente"/>
         <activity android:name=".Menu"/>
         <activity android:name=".Bebidas"/>
-        <activity android:name=".localizacion"/>
         <activity android:name=".Pedido"/>
         <activity android:name=".Agradecimientos"/>
         <uses-library android:name=
