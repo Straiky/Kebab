@@ -30,4 +30,5 @@
     <string name="fechac">fecha de c</string>
     <string name="agradecer">Gracias por realizar su compra.</string>
     <string name="btnMenuPrincipal">Menu Principal</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -13,12 +13,14 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button btnContacto;
     Button btnEmp;
+    Button btnMaps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnContacto = (Button) findViewById(R.id.btnContacto);
         btnEmp = (Button) findViewById(R.id.btnEmpezar);
+        btnMaps = (Button) findViewById(R.id.btnMaps);
         btnContacto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -37,9 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 lanzaAtras(null);
             }
         });
+        btnMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lanzaMapa(null);
+
+            }
+        });
     }
     private void lanzaAtras(View view) {
         Intent intent=new Intent(this, Cliente.class);
+        startActivity(intent);
+    }
+    private void lanzaMapa(View view) {
+        Intent intent=new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 }
