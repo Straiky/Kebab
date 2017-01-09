@@ -41,7 +41,7 @@ public class Cliente extends AppCompatActivity{
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                finishAffinity();
                 System.runFinalization();
                 System.exit(0);
             }
