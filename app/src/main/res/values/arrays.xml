@@ -25,5 +25,6 @@
     <string-array name="TipoTamanyo" >
         <item>Normal</item>
         <item>Completo, +1€</item>
+        <item>Vegetal</item>
     </string-array>
 </resources>

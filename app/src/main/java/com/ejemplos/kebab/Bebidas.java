@@ -72,7 +72,6 @@ public class Bebidas extends AppCompatActivity {
             public void onClick(View v) {
                 if (!canti.getText().toString().equals("")) {
                     bebidaList.add(spnBebidas.getSelectedItem().toString());
-                    Toast.makeText(getApplicationContext(), "" + spnBebidas.getSelectedItemPosition(), Toast.LENGTH_LONG).show();
                     switch (spnBebidas.getSelectedItemPosition()) {
                         case 0:
                         case 1:

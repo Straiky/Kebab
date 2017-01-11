@@ -114,6 +114,13 @@ public class Pedido extends AppCompatActivity {
             public void onClick(View v) {
                 if ((rdbTarjeta.isChecked() & !txtTarjeta.getText().toString().equals("") & !txtFecha.getText().toString().equals("") & !txtDig.getText().toString().equals("")) | rdbContado.isChecked()) {
                     empiezaSig(null);
+                }else{
+                    if(txtTarjeta.getText().toString().equals("")){
+                        txtTarjeta.setError("Debes introducir el campo");
+                    }if(txtFecha.getText().toString().equals("")){
+                        txtFecha.setError("Debes introducir el campo");
+                    }if(txtDig.getText().toString().equals("")){
+                        txtDig.setError("Debes introducir el campo");}
                 }
             }
         });
