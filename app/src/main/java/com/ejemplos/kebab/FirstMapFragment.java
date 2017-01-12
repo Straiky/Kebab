@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.maps.SupportMapFragment;
 
+//Mostrar mapa
 
-/**
- * Muestra el FirstMapFragment
- */
-public class FirstMapFragment extends SupportMapFragment {
+public class FirstMapFragment extends SupportMapFragment  {
 
     public FirstMapFragment() {
     }
@@ -20,8 +18,10 @@ public class FirstMapFragment extends SupportMapFragment {
         return new FirstMapFragment();
     }
 
+    //szD
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View root = super.onCreateView(inflater, container, savedInstanceState);
 
         return root;
