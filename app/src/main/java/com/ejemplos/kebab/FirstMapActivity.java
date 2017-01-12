@@ -21,10 +21,7 @@ public class FirstMapActivity extends AppCompatActivity implements OnMapReadyCal
 
 
         mFirstMapFragment = FirstMapFragment.newInstance();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.map_container, mFirstMapFragment)
-                .commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.map, mFirstMapFragment).commit();
 
         mFirstMapFragment.getMapAsync(this);
     }
