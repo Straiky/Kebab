@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void lanzaMapa(View view) {
-        Intent intent=new Intent(this, MapsActivity.class);
+        Intent intent=new Intent(this, FirstMapActivity.class);
         startActivity(intent);
     }
 }
