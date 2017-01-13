@@ -2,7 +2,6 @@ package com.ejemplos.kebab;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,8 @@ import java.util.ArrayList;
 public class Pedido extends AppCompatActivity {
     RadioButton rdbTarjeta, rdbContado;
     EditText txtTarjeta, txtFecha, txtDig;
-    TextView lblPedido, lblPedidobebidas, lblTar, lblFecha, lblDig, lblTotal;
+    TextView lblTar, lblFecha, lblDig, lblTotal;
+    TextView tipoK, tam, tipoC, can, tipoB, canB;
     ArrayList pedido, bebidas;
     Button salir, atras, aceptar;
     Double factura;
@@ -43,8 +43,12 @@ public class Pedido extends AppCompatActivity {
         txtTarjeta = (EditText) findViewById(R.id.txtNumTarjeta);
         rdbContado = (RadioButton) findViewById(R.id.rdbContado);
         rdbTarjeta = (RadioButton) findViewById(R.id.rdbTarjeta);
-        lblPedido = (TextView) findViewById(R.id.lblPedidoRealizado);
-        lblPedidobebidas = (TextView) findViewById(R.id.lblBebidasRealizadas);
+        tipoK=(TextView)findViewById(R.id.Tipo_de_Kebab);
+        tipoC=(TextView)findViewById(R.id.Tipo_de_Carne);
+        tam=(TextView)findViewById(R.id.Tamaño);
+        can=(TextView)findViewById(R.id.Cantidad);
+        tipoB=(TextView)findViewById(R.id.Tipo_de_Bebida);
+        canB=(TextView)findViewById(R.id.Cantidad_bebida);
         lblTar = (TextView) findViewById(R.id.NºTarjeta);
         lblFecha = (TextView) findViewById(R.id.lblFecha);
         lblDig = (TextView) findViewById(R.id.lblDigitos);
@@ -54,21 +58,27 @@ public class Pedido extends AppCompatActivity {
         lblTotal = (TextView) findViewById(R.id.lblTotal);
 
         txtTarjeta.requestFocus();
-        lblPedido.setText("");
         if (pedido==null) {
-            lblPedido.setText("No has pedido ningun Kebab");
+            tipoK.setText("No has pedido ningun Kebab");
         } else {
             for (int i = 0; i < pedido.size(); i++) {
-                lblPedido.setText((String) lblPedido.getText() + pedido.get(i) + "\r\n");
+                tipoK.setText((String) tipoK.getText() + pedido.get(i) + "\r\n");
+                i++;
+                tam.setText((String) tam.getText() + pedido.get(i) + "\r\n");
+                i++;
+                tipoC.setText((String) tipoC.getText() + pedido.get(i) + "\r\n");
+                i++;
+                can.setText((String) can.getText() + pedido.get(i) + "\r\n");
             }
         }
 
-        lblPedidobebidas.setText("");
         if (bebidas==null) {
-            lblPedidobebidas.setText("No has pedido ninguna bebida");
+            tipoB.setText("No has pedido ninguna bebida");
         } else {
             for (int j = 0; j < bebidas.size(); j++) {
-                lblPedidobebidas.setText((String) lblPedidobebidas.getText() + bebidas.get(j) + "\r\n");
+                tipoB.setText((String) tipoB.getText() + bebidas.get(j) + "\r\n");
+                j++;
+                canB.setText((String) canB.getText() + bebidas.get(j) + "\r\n");
             }
         }
 

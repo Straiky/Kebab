@@ -2,22 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black">
+    android:background="@android:color/black"
+    android:weightSum="136">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="Nombre:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/nom"
             android:background="@android:color/white"
             android:id="@+id/txtNombre"
@@ -26,18 +28,18 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="Apellidos:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/ape"
             android:background="@android:color/white"
             android:id="@+id/txtApellido"/>
@@ -45,18 +47,18 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp"
+        android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="Direccion:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="250sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/direc"
             android:inputType="textPostalAddress"
             android:background="@android:color/white"
@@ -65,18 +67,18 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp"
+        android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="Telefono:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="250sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/tel"
             android:inputType="phone"
             android:background="@android:color/white"
@@ -86,18 +88,18 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="123"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15sp">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="Código Postal:"
             android:textColor="@android:color/white"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/cp"
             android:inputType="number"
             android:background="@android:color/white"
@@ -109,7 +111,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250sp"
+        android:layout_weight="1"
         android:gravity="center">
         <Button
             android:layout_width="wrap_content"

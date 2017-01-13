@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bebidas" >
-        <item>Coca Cola, 1€</item>
-        <item>Kas Naranja, 1€</item>
-        <item>Kas Limon, 1€</item>
-        <item>Aquarius, 2€</item>
-        <item>Nestea, 2€</item>
-        <item>Agua, 0.5€</item>
+        <item>Coca Cola</item>
+        <item>Kas Naranja</item>
+        <item>Kas Limon</item>
+        <item>Aquarius</item>
+        <item>Nestea</item>
+        <item>Agua</item>
     </string-array>
 
     <string-array name="TipoKebab" >
-        <item>Döner, 4€</item>
-        <item>Dürüm, 5€</item>
-        <item>Lahmacum, 5€</item>
-        <item>Shawarma, 6€</item>
-        <item>Gyros, 4€</item>
+        <item>Döner</item>
+        <item>Dürüm</item>
+        <item>Lahmacum</item>
+        <item>Shawarma</item>
+        <item>Gyros</item>
     </string-array>
 
     <string-array name="TipoCarne" >
         <item>Cordero</item>
         <item>Ternera</item>
         <item>Pollo</item>
+        <item>Vegetal</item>
     </string-array>
     <string-array name="TipoTamanyo" >
         <item>Normal</item>
-        <item>Completo, +1€</item>
-        <item>Vegetal</item>
+        <item>Completo</item>
     </string-array>
 </resources>

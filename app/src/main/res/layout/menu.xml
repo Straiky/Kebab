@@ -6,15 +6,25 @@
     android:id="@+id/menu"
     android:background="@android:color/background_dark"
     android:gravity="center_horizontal">
-
-    <Spinner
-        android:layout_width="207dp"
-        android:id="@+id/spnTipoKebab"
-        android:background="@android:drawable/spinner_background"
-        android:layout_marginTop="25dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start" />
-
+        android:gravity="center_horizontal"
+        android:layout_marginTop="25dp">
+        <Spinner
+            android:layout_width="207dp"
+            android:id="@+id/spnTipoKebab"
+            android:background="@android:drawable/spinner_background"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_weight="3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/precio"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
         <Spinner
             android:layout_width="207dp"
@@ -24,14 +34,24 @@
             android:layout_marginTop="7dp"
             android:gravity="start" />
 
-
-    <Spinner
-        android:layout_width="207dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spnrTamanyo"
-        android:background="@android:drawable/spinner_background"
-        android:layout_marginTop="7dp"
-        android:gravity="start" />
+        android:layout_marginTop="7dp">
+        <Spinner
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnrTamanyo"
+            android:background="@android:drawable/spinner_background"
+            android:gravity="start"
+            android:layout_weight="3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/precio2"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 <LinearLayout
     android:layout_width="wrap_content"

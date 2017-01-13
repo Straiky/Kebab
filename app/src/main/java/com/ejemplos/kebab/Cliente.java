@@ -1,18 +1,11 @@
 package com.ejemplos.kebab;
 
-import android.app.Application;
 import android.content.Intent;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 /**
@@ -63,15 +56,26 @@ public class Cliente extends AppCompatActivity{
                 if (nombre.equals("")||apell.equals("")||tele.equals("")||cop.equals("")||direcc.equals("")){
                     ponError();
                 }else{
-                    cliente.add(nombre);
-                    cliente.add(apell);
-                    cliente.add(direcc);
-                    cliente.add(tele);
-                    cliente.add(cop);
-                    empiezaSig(null);
+                    listo();
                 }
             }
         });
+    }
+
+    private void listo() {
+        if (tele.length()<9){
+            tel.setError("Telefono no valido");
+        }else if(cp.length()<5) {
+            cp.setError("Codigo incorrecto");
+        }else {
+
+                cliente.add(nombre);
+                cliente.add(apell);
+                cliente.add(direcc);
+                cliente.add(tele);
+                cliente.add(cop);
+                empiezaSig(null);
+        }
     }
 
     private void empiezaSig(View view) {

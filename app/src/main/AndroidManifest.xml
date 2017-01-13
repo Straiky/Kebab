@@ -31,7 +31,7 @@
         <activity android:name=".Bebidas" />
         <activity android:name=".Pedido" />
         <activity android:name=".Agradecimientos" />
-        <activity android:name=".FirstMapActivity" />
+        <activity android:name=".FirstMapActivity" android:screenOrientation="portrait"/>
 
 
         <!--
@@ -53,9 +53,6 @@
             android:glEsVersion="0x00020000"
             android:required="true" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

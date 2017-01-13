@@ -2,24 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black">
-    <Spinner
-        android:layout_width="250sp"
+    android:gravity="center_horizontal"
+    android:background="@android:color/black"
+    android:weightSum="1000">
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25sp"
-        android:layout_marginLeft="25sp"
-        android:id="@+id/spnBebidas"
-        android:background="@android:color/white"/>
+        android:gravity="bottom"
+        android:layout_marginTop="15sp"
+        android:layout_weight="3">
+        <Spinner
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnBebidas"
+            android:background="@android:color/white"
+            android:layout_weight="3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/precio"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_weight="996"
+        android:weightSum="50">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/canti"
             android:layout_marginTop="25sp"
             android:layout_marginLeft="25sp"
+            android:layout_weight="1"
             android:textColor="@android:color/white"/>
 
         <EditText
@@ -27,17 +45,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25sp"
             android:layout_marginLeft="25sp"
-            android:id="@+id/cantidad"
+            android:id="@+id/cantidadBebidas"
             android:inputType="number"
             android:background="@android:color/white"
-            android:text="0" />
+            android:layout_weight="6"
+            android:text="0"
+            android:textAlignment="textEnd" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="360dp">
+        android:layout_weight="1">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
