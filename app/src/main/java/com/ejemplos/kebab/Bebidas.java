@@ -102,7 +102,9 @@ public class Bebidas extends AppCompatActivity {
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!canti.getText().toString().equals("") | !canti.getText().toString().equals("0")) {
+                if (canti.getText().toString().equals("") | canti.getText().toString().equals("0")) {
+                    Toast.makeText(getApplicationContext(), "No se puede añadir una bebida con 0 cantidades", Toast.LENGTH_LONG).show();
+                }else{
                     bebidaList.add(spnBebidas.getSelectedItem().toString());
                     bebidaList.add(canti.getText().toString());
                     switch (spnBebidas.getSelectedItemPosition()) {
