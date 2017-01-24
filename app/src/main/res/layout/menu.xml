@@ -1,114 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/menu"
-    android:background="@android:color/background_dark"
-    android:gravity="center_horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="134">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="25dp">
-        <Spinner
-            android:layout_width="207dp"
-            android:id="@+id/spnTipoKebab"
-            android:background="@android:drawable/spinner_background"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:layout_weight="3"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/precio"
-            android:textColor="@android:color/white"
-            android:layout_weight="1"/>
-    </LinearLayout>
+        android:layout_marginTop="25dp"
+        android:layout_weight="3"
+        android:gravity="center_horizontal">
 
         <Spinner
+            android:id="@+id/spnTipoKebab"
             android:layout_width="207dp"
             android:layout_height="wrap_content"
-            android:id="@+id/spnTipoCarne"
+            android:layout_weight="3"
             android:background="@android:drawable/spinner_background"
-            android:layout_marginTop="7dp"
+            android:gravity="start"
+            android:spinnerMode="dialog" />
+
+        <TextView
+            android:id="@+id/precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spnTipoCarne"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3"
+        android:background="@android:drawable/spinner_background"
+        android:gravity="start" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3">
+
+        <Spinner
+            android:id="@+id/spnrTamanyo"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@android:drawable/spinner_background"
             android:gravity="start" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp">
-        <Spinner
-            android:layout_width="207dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/spnrTamanyo"
-            android:background="@android:drawable/spinner_background"
-            android:gravity="start"
-            android:layout_weight="3"/>
         <TextView
+            android:id="@+id/precio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/precio2"
-            android:textColor="@android:color/white"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textColor="@android:color/white" />
     </LinearLayout>
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="7dp">
-
-    <EditText
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/txtCantidad"
-        android:background="@android:drawable/edit_text"
-        android:text="0" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblPista"
-        android:textColor="@android:color/background_light"
-        android:layout_marginLeft="50dp"
-        android:text="@string/lblPista" />
-
-</LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3">
+
+        <EditText
+            android:id="@+id/txtCantidad"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/lblPista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="@string/lblPista"
+            android:textColor="@android:color/background_dark" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imagenPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="121" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center">
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/btnsalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="160dp">
         <Button
+            android:id="@+id/btnsiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/salir"
-            android:id="@+id/btnsalir"/>
+            android:text="@string/siguiente" />
+
         <Button
+            android:id="@+id/btnAñadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/atras"
-            android:id="@+id/btnatras"/>
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/siguiente"
-        android:id="@+id/btnsiguiente"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnAñadir"
-            android:id="@+id/btnAñadir"/>
+            android:text="@string/btnAñadir" />
 
     </LinearLayout>
 

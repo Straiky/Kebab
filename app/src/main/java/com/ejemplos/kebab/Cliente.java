@@ -3,6 +3,8 @@ package com.ejemplos.kebab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,9 +14,9 @@ import java.util.ArrayList;
  * Created by adminportatil on 14/12/2016.
  */
 
-public class Cliente extends AppCompatActivity{
+public class Cliente extends AppCompatActivity {
     EditText nom, ape, direc, tel, cp;
-    Button sig, salir, atras;
+    Button sig, salir;
     String nombre, apell, direcc, tele, cop;
     ArrayList<String> cliente = new ArrayList<>();
     @Override
@@ -27,7 +29,6 @@ public class Cliente extends AppCompatActivity{
         direc=(EditText) findViewById(R.id.txtDireccion);
         tel=(EditText) findViewById(R.id.txtTelefono);
         cp=(EditText) findViewById(R.id.txtCP);
-        atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
 
@@ -37,12 +38,6 @@ public class Cliente extends AppCompatActivity{
                 finishAffinity();
                 System.runFinalization();
                 System.exit(0);
-            }
-        });
-        atras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
             }
         });
         sig.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +57,26 @@ public class Cliente extends AppCompatActivity{
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void listo() {
         if (tele.length()<9){
             tel.setError("Telefono no valido");
@@ -74,11 +89,11 @@ public class Cliente extends AppCompatActivity{
                 cliente.add(direcc);
                 cliente.add(tele);
                 cliente.add(cop);
-                empiezaSig(null);
+                empiezaSig();
         }
     }
 
-    private void empiezaSig(View view) {
+    private void empiezaSig() {
         Intent intent=new Intent(this, Menu.class);
         intent.putExtra("cliente", cliente);
         startActivity(intent);

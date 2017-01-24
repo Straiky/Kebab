@@ -22,7 +22,7 @@ public class Pedido extends AppCompatActivity {
     TextView lblTar, lblFecha, lblDig, lblTotal;
     TextView tipoK, tam, tipoC, can, tipoB, canB;
     ArrayList pedido, bebidas;
-    Button salir, atras, aceptar;
+    Button salir, aceptar;
     Double factura;
 
     @Override
@@ -53,7 +53,6 @@ public class Pedido extends AppCompatActivity {
         lblFecha = (TextView) findViewById(R.id.lblFecha);
         lblDig = (TextView) findViewById(R.id.lblDigitos);
         salir = (Button) findViewById(R.id.btnsalir);
-        atras = (Button) findViewById(R.id.btnatras);
         aceptar = (Button) findViewById(R.id.btnAceptar);
         lblTotal = (TextView) findViewById(R.id.lblTotal);
 
@@ -113,17 +112,11 @@ public class Pedido extends AppCompatActivity {
                 System.exit(0);
             }
         });
-        atras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if ((rdbTarjeta.isChecked() & !txtTarjeta.getText().toString().equals("") & !txtFecha.getText().toString().equals("") & !txtDig.getText().toString().equals("")) | rdbContado.isChecked()) {
-                    empiezaSig(null);
+                    empiezaSig();
                 }else{
                     if(txtTarjeta.getText().toString().equals("")){
                         txtTarjeta.setError("Debes introducir el campo");
@@ -136,7 +129,7 @@ public class Pedido extends AppCompatActivity {
         });
     }
 
-    private void empiezaSig(View view) {
+    private void empiezaSig() {
         Intent intent1 = new Intent(this, Agradecimientos.class);
         intent1.putExtra("factura", factura);
         startActivity(intent1);

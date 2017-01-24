@@ -1,6 +1,7 @@
 package com.ejemplos.kebab;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,21 +9,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class Menu  extends AppCompatActivity {
-    Button sig, salir, atras,añadir;
+    Button sig, salir,añadir;
     EditText cantidad;
     TextView txtPrecio, txtMas;
+    ImageView img;
     Spinner tipoKebab, tipoCarne, tipoTamanyo;
-    String pedido="";
-    ArrayList<String> kebabList = new ArrayList<String>();
-    ArrayList<String> cliente=new ArrayList<String>();
+    ArrayList<String> kebabList = new ArrayList<>();
+    ArrayList<String> cliente=new ArrayList<>();
     Double factura=0.0;
 
     protected void onCreate(Bundle savedInstanceState){
@@ -34,11 +34,11 @@ public class Menu  extends AppCompatActivity {
         tipoKebab=(Spinner) findViewById(R.id.spnTipoKebab);
         tipoCarne=(Spinner) findViewById(R.id.spnTipoCarne);
         tipoTamanyo=(Spinner) findViewById(R.id.spnrTamanyo);
-        atras=(Button) findViewById(R.id.btnatras);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
         txtPrecio=(TextView) findViewById(R.id.precio);
         txtMas=(TextView) findViewById(R.id.precio2);
+        img=(ImageView) findViewById(R.id.imagenPedido);
 
         cliente=getIntent().getStringArrayListExtra("cliente");
 
@@ -59,15 +59,22 @@ public class Menu  extends AppCompatActivity {
                 switch (position){
                     case 0:
                         txtPrecio.setText("4€");
+                        img.setImageResource(R.mipmap.doner);
                         break;
                     case 1:
+                        img.setImageResource(R.mipmap.durum);
+                        txtPrecio.setText("5€");
+                        break;
                     case 2:
+                        img.setImageResource(R.mipmap.lahmacum);
                         txtPrecio.setText("5€");
                         break;
                     case 3:
+                        img.setImageResource(R.mipmap.shawarma);
                         txtPrecio.setText("6€");
                         break;
                     case 4:
+                        img.setImageResource(R.mipmap.gyros);
                         txtPrecio.setText("4€");
                         break;
                     default:
@@ -85,6 +92,9 @@ public class Menu  extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
+                    case 0:
+                        txtMas.setText("");
+                        break;
                     case 1:
                         txtMas.setText("+1€");
                         break;
@@ -112,6 +122,8 @@ public class Menu  extends AppCompatActivity {
                 }
                 if(cant!=0) {
                     listo(tipo, tam, carne, cant);
+                }else{
+                    Toast.makeText(getApplicationContext(), "No has añadido cantidad correcta", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -120,35 +132,58 @@ public class Menu  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finishAffinity();
-                System.runFinalization();
-                System.exit(0);
-            }
-        });
-        atras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
             }
         });
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            empiezaSig(null);
+            empiezaSig();
             }
         });
 
     }
 
     private void listo(String tipo, String tam, String carne, Integer cant) {
-        kebabList.add(tipo);
-        kebabList.add(tam);
-        kebabList.add(carne);
-        kebabList.add(cant.toString());
+        if(compruebaNoRepe(tipo, tam, carne)) {
+            kebabList.add(tipo);
+            kebabList.add(tam);
+            kebabList.add(carne);
+            kebabList.add(cant.toString());
+        }else{
+            añadeCantidad(tipo, tam, carne, cant);
+        }
         añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
         tipoKebab.setSelection(0);
         tipoTamanyo.setSelection(0);
         tipoCarne.setSelection(0);
         cantidad.setText("0");
+
+    }
+
+    private void añadeCantidad(String tipo, String tam, String carne, Integer cant) {
+        for(int i = 0; i<kebabList.size();i++){
+            if(kebabList.get(i).toString().equals(tipo)){
+                if (kebabList.get(i+1).toString().equals(tam)){
+                    if(kebabList.get(i+2).toString().equals(carne)){
+                        kebabList.set(i+3, ""+(Integer.parseInt(kebabList.get(i+3))+cant));
+                    }
+                }
+            }
+        }
+    }
+
+    private boolean compruebaNoRepe(String tipo, String tam, String carne) {
+        Boolean noElegido=true;
+        for(int i = 0; i<kebabList.size();i++){
+            if(kebabList.get(i).toString().equals(tipo)){
+                if (kebabList.get(i+1).toString().equals(tam)){
+                    if(kebabList.get(i+2).toString().equals(carne)){
+                        noElegido=false;
+                    }
+                }
+            }
+        }
+        return noElegido;
     }
 
     private void añadeFactura(Integer a, Integer c, Integer d) {
@@ -176,7 +211,7 @@ public class Menu  extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Este pedido vale "+este*d+". Llevas pedido "+factura, Toast.LENGTH_LONG).show();
     }
 
-    private void empiezaSig(View view) {
+    private void empiezaSig() {
         Intent intent=new Intent(this, Bebidas.class);
         intent.putExtra("pedido", kebabList);
         intent.putExtra("cliente", cliente);

@@ -7,8 +7,6 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnContacto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:0377778888"));
+                callIntent.setData(Uri.parse("tel:688603017"));
 
                 if (ActivityCompat.checkSelfPermission(MainActivity.this,
                         Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -40,24 +38,24 @@ public class MainActivity extends AppCompatActivity {
         btnEmp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lanzaAtras(null);
+                lanzaEmp();
             }
         });
         btnMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lanzaMapa(null);
+                lanzaMapa();
 
             }
         });
     }
 
-    private void lanzaAtras(View view) {
+    private void lanzaEmp() {
         Intent intent = new Intent(this, Cliente.class);
         startActivity(intent);
     }
 
-    private void lanzaMapa(View view) {
+    private void lanzaMapa() {
         Intent intent = new Intent(this, FirstMapActivity.class);
         startActivity(intent);
     }

@@ -63,11 +63,7 @@
             android:layout_height="wrap_content"
             android:text="@string/salir"
             android:id="@+id/btnsalir"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/atras"
-            android:id="@+id/btnatras"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

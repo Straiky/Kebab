@@ -22,14 +22,13 @@ import java.util.ArrayList;
 
 public class Bebidas extends AppCompatActivity {
     Spinner spnBebidas;
-    Button sig, salir, atras, añadir;
+    Button sig, salir, añadir;
     Double factura = 0.0;
     EditText canti;
     TextView txtprecio;
-    ArrayList<String> bebidaList = new ArrayList<String>();
-    ArrayList<String> kebabList = new ArrayList<String>();
-    ArrayList<String> cliente = new ArrayList<String>();
-    Toolbar toolbar;
+    ArrayList<String> bebidaList = new ArrayList<>();
+    ArrayList<String> kebabList = new ArrayList<>();
+    ArrayList<String> cliente = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,6 @@ public class Bebidas extends AppCompatActivity {
 
 
         spnBebidas = (Spinner) findViewById(R.id.spnBebidas);
-        atras = (Button) findViewById(R.id.btnatras);
         sig = (Button) findViewById(R.id.btnsiguiente);
         salir = (Button) findViewById(R.id.btnsalir);
         añadir = (Button) findViewById(R.id.btnAñadir);
@@ -86,16 +84,10 @@ public class Bebidas extends AppCompatActivity {
                 System.exit(0);
             }
         });
-        atras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                empiezaSig(null);
+                empiezaSig();
             }
         });
 
@@ -133,7 +125,7 @@ public class Bebidas extends AppCompatActivity {
 
     }
 
-    private void empiezaSig(View view) {
+    private void empiezaSig() {
         Intent intent = new Intent(this, Pedido.class);
         intent.putExtra("cliente", cliente);
         intent.putExtra("pedido", kebabList);
