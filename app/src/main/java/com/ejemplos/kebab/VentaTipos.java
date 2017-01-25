@@ -1,11 +1,13 @@
 package com.ejemplos.kebab;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import android.widget.TextView;
 
 public class VentaTipos extends AppCompatActivity{
     Spinner tipoCarne, tipoTamanyo;
+    Button añadir;
     TextView txtmas;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class VentaTipos extends AppCompatActivity{
         tipoCarne=(Spinner) findViewById(R.id.spnTipoCarne);
         tipoTamanyo=(Spinner) findViewById(R.id.spnrTamanyo);
         txtmas=(TextView) findViewById(R.id.precio2);
+        añadir=(Button) findViewById(R.id.btnAñadir);
 
         ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
         ArrayAdapter adpTipoTamanyo=ArrayAdapter.createFromResource(this, R.array.TipoTamanyo, android.R.layout.simple_spinner_item);
@@ -51,7 +55,15 @@ public class VentaTipos extends AppCompatActivity{
             }
         });
 
-
+        añadir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.putExtra("carne", tipoCarne.getSelectedItem().toString());
+                intent.putExtra("tamanyo", tipoTamanyo.getSelectedItem().toString());
+                setResult(RESULT_OK, intent);
+            }
+        });
         //String tam=(tipoTamanyo.getSelectedItem().toString());
         //String carne=(tipoCarne.getSelectedItem().toString());
         //cant = Integer.parseInt(cantidad.getText().toString());

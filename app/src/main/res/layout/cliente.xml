@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:weightSum="136">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +26,8 @@
             android:background="@android:color/white"
             android:id="@+id/txtNombre"
             android:layout_weight="2.87"
-            android:maxLines="1" />
+            android:inputType="textPersonName"
+            android:maxLines="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -46,7 +48,8 @@
             android:hint="@string/ape"
             android:background="@android:color/white"
             android:id="@+id/txtApellido"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:inputType="textPersonName"/>
     </LinearLayout>
 
     <LinearLayout
@@ -67,7 +70,8 @@
             android:hint="@string/direc"
             android:inputType="textPostalAddress"
             android:background="@android:color/white"
-            android:id="@+id/txtDireccion"/>
+            android:id="@+id/txtDireccion"
+            android:singleLine="true" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"

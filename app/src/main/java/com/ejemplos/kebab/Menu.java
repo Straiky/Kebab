@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Menu  extends AppCompatActivity {
     Button sig, salir,añadir;
-    TextView txtPrecio, txtMas;
+    TextView txtPrecio;
     ImageView img;
     Spinner tipoKebab;
     ArrayList<String> kebabList = new ArrayList<>();
@@ -33,7 +33,6 @@ public class Menu  extends AppCompatActivity {
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
         txtPrecio=(TextView) findViewById(R.id.precio);
-        txtMas=(TextView) findViewById(R.id.precio2);
         img=(ImageView) findViewById(R.id.imagenPedido);
 
         cliente=getIntent().getStringArrayListExtra("cliente");
@@ -187,6 +186,15 @@ public class Menu  extends AppCompatActivity {
     private void abreVentana(){
         Intent intent=new Intent(this, VentaTipos.class);
         startActivityForResult(intent, 123);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==123 && resultCode==RESULT_OK){
+            txtPrecio.setText(txtPrecio.getText()+"\r\nCarne:"+data.getExtras().getString("carne")+"\n\rTamaño:"+data.getExtras().getString("tamanyo"));
+        }
     }
 
     private void empiezaSig() {
