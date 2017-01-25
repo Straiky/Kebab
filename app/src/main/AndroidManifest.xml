@@ -52,6 +52,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Bebidas"/>
         </activity>
+        <activity android:name=".VentaTipos"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

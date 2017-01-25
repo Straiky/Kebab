@@ -17,10 +17,9 @@ import java.util.ArrayList;
 
 public class Menu  extends AppCompatActivity {
     Button sig, salir,añadir;
-    EditText cantidad;
     TextView txtPrecio, txtMas;
     ImageView img;
-    Spinner tipoKebab, tipoCarne, tipoTamanyo;
+    Spinner tipoKebab;
     ArrayList<String> kebabList = new ArrayList<>();
     ArrayList<String> cliente=new ArrayList<>();
     Double factura=0.0;
@@ -30,10 +29,7 @@ public class Menu  extends AppCompatActivity {
         setContentView(R.layout.menu);
 
         añadir=(Button) findViewById(R.id.btnAñadir);
-        cantidad=(EditText) findViewById(R.id.txtCantidad);
         tipoKebab=(Spinner) findViewById(R.id.spnTipoKebab);
-        tipoCarne=(Spinner) findViewById(R.id.spnTipoCarne);
-        tipoTamanyo=(Spinner) findViewById(R.id.spnrTamanyo);
         sig=(Button) findViewById(R.id.btnsiguiente);
         salir=(Button) findViewById(R.id.btnsalir);
         txtPrecio=(TextView) findViewById(R.id.precio);
@@ -43,15 +39,10 @@ public class Menu  extends AppCompatActivity {
         cliente=getIntent().getStringArrayListExtra("cliente");
 
         ArrayAdapter adpTipoKebab=ArrayAdapter.createFromResource(this, R.array.TipoKebab, android.R.layout.simple_spinner_item);
-        ArrayAdapter adpTipoCarne=ArrayAdapter.createFromResource(this, R.array.TipoCarne, android.R.layout.simple_spinner_item);
-        ArrayAdapter adpTipoTamanyo=ArrayAdapter.createFromResource(this, R.array.TipoTamanyo, android.R.layout.simple_spinner_item);
 
         adpTipoKebab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipoKebab.setAdapter(adpTipoKebab);
-        adpTipoCarne.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoCarne.setAdapter(adpTipoCarne);
-        adpTipoTamanyo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoTamanyo.setAdapter(adpTipoTamanyo);
+
 
         tipoKebab.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -88,43 +79,25 @@ public class Menu  extends AppCompatActivity {
                 tipoKebab.setSelection(0);
             }
         });
-        tipoTamanyo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:
-                        txtMas.setText("");
-                        break;
-                    case 1:
-                        txtMas.setText("+1€");
-                        break;
-                }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                tipoTamanyo.setSelection(0);
-            }
-        });
+
 
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String tipo=tipoKebab.getSelectedItem().toString();
-                String tam=(tipoTamanyo.getSelectedItem().toString());
-                String carne=(tipoCarne.getSelectedItem().toString());
                 Integer cant;
-
+                abreVentana();
+/*
                 if(cantidad.getText().toString().equals("")){
                     cant=0;
                 }else {
-                    cant = Integer.parseInt(cantidad.getText().toString());
                 }
                 if(cant!=0) {
-                    listo(tipo, tam, carne, cant);
+                    listo(tipo, /*tam, carne, cant);
                 }else{
                     Toast.makeText(getApplicationContext(), "No has añadido cantidad correcta", Toast.LENGTH_LONG).show();
-                }
+                }*/
             }
 
         });
@@ -152,11 +125,11 @@ public class Menu  extends AppCompatActivity {
         }else{
             añadeCantidad(tipo, tam, carne, cant);
         }
-        añadeFactura(tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
+        /*añadeFactura (tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
         tipoKebab.setSelection(0);
         tipoTamanyo.setSelection(0);
         tipoCarne.setSelection(0);
-        cantidad.setText("0");
+        cantidad.setText("0");*/
 
     }
 
@@ -209,6 +182,11 @@ public class Menu  extends AppCompatActivity {
 
         factura+=este*d;
         Toast.makeText(getApplicationContext(), "Este pedido vale "+este*d+". Llevas pedido "+factura, Toast.LENGTH_LONG).show();
+    }
+
+    private void abreVentana(){
+        Intent intent=new Intent(this, VentaTipos.class);
+        startActivityForResult(intent, 123);
     }
 
     private void empiezaSig() {

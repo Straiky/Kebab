@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3">
+
+        <Spinner
+            android:id="@+id/spnTipoCarne"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_weight="3"
+            android:background="@android:drawable/spinner_background"
+            android:gravity="start" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3">
+
+        <Spinner
+            android:id="@+id/spnrTamanyo"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@android:drawable/spinner_background"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/precio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_weight="3">
+
+        <EditText
+            android:id="@+id/txtCantidad"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/lblPista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="@string/lblPista"
+            android:textColor="@android:color/background_dark" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAñadir"/>
+    </LinearLayout>
 </LinearLayout>
