@@ -44,7 +44,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Bebidas"/>
         </activity>
-        <activity android:name=".Agradecimientos" />
+        <activity android:name=".Agradecimientos">
+
+        </activity>
         <activity android:name=".FirstMapActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".Bebidas">

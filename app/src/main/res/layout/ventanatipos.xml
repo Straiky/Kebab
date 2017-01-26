@@ -66,13 +66,14 @@
             android:textColor="@android:color/background_dark" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/botonAñadirVentana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnAñadir"/>

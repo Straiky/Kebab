@@ -84,8 +84,6 @@ public class Menu  extends AppCompatActivity {
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tipo=tipoKebab.getSelectedItem().toString();
-                Integer cant;
                 abreVentana();
 /*
                 if(cantidad.getText().toString().equals("")){
@@ -124,11 +122,8 @@ public class Menu  extends AppCompatActivity {
         }else{
             añadeCantidad(tipo, tam, carne, cant);
         }
-        /*añadeFactura (tipoKebab.getSelectedItemPosition(), tipoTamanyo.getSelectedItemPosition(), cant);
+        añadeFactura (tipoKebab.getSelectedItemPosition(), tam, cant);
         tipoKebab.setSelection(0);
-        tipoTamanyo.setSelection(0);
-        tipoCarne.setSelection(0);
-        cantidad.setText("0");*/
 
     }
 
@@ -158,7 +153,7 @@ public class Menu  extends AppCompatActivity {
         return noElegido;
     }
 
-    private void añadeFactura(Integer a, Integer c, Integer d) {
+    private void añadeFactura(Integer a, String c, Integer d) {
         Double este=0.0;
         switch (a){
             case 0:
@@ -176,7 +171,7 @@ public class Menu  extends AppCompatActivity {
             case 4:
                 este+=4;
         }
-        if (c==1)
+        if (c.toLowerCase().equals("completo"))
             este+=1;
 
         factura+=este*d;
@@ -191,9 +186,10 @@ public class Menu  extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        String tipo=tipoKebab.getSelectedItem().toString();
 
         if (requestCode==123 && resultCode==RESULT_OK){
-            txtPrecio.setText(txtPrecio.getText()+"\r\nCarne:"+data.getExtras().getString("carne")+"\n\rTamaño:"+data.getExtras().getString("tamanyo"));
+            listo(tipo, data.getExtras().getString("carne"), data.getExtras().getString("tamanyo"), data.getExtras().getInt("cantidad"));
         }
     }
 

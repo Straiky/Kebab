@@ -56,16 +56,16 @@
             android:text="@string/salir" />
 
         <Button
-            android:id="@+id/btnsiguiente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/siguiente" />
-
-        <Button
             android:id="@+id/btnAñadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnAñadir" />
+
+        <Button
+            android:id="@+id/btnsiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/siguiente" />
 
     </LinearLayout>
 
