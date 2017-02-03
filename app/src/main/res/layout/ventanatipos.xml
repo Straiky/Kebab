@@ -76,6 +76,7 @@
             android:id="@+id/botonAñadirVentana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnAñadir"/>
+            android:text="@string/btnAñadir"
+            style="@android:style/Widget.Button.Inset"/>
     </LinearLayout>
 </LinearLayout>

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -85,16 +87,6 @@ public class Menu  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 abreVentana();
-/*
-                if(cantidad.getText().toString().equals("")){
-                    cant=0;
-                }else {
-                }
-                if(cant!=0) {
-                    listo(tipo, /*tam, carne, cant);
-                }else{
-                    Toast.makeText(getApplicationContext(), "No has añadido cantidad correcta", Toast.LENGTH_LONG).show();
-                }*/
             }
 
         });
@@ -199,5 +191,28 @@ public class Menu  extends AppCompatActivity {
         intent.putExtra("cliente", cliente);
         intent.putExtra("factura", factura);
         startActivity(intent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menupedido, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.Logout:
+                Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            case R.id.settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void lanzaEmp() {
-        Intent intent = new Intent(this, Cliente.class);
+        Intent intent = new Intent(this, login.class);
         startActivity(intent);
     }
 

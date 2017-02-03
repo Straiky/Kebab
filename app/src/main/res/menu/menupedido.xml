@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        android:visible="true"
+        android:enabled="true"
+        app:showAsAction="never"/>
+    <item android:id="@+id/Logout"
+        android:title="Cerrar Sesión"
+        android:visible="true"
+        android:enabled="true"
+
+        app:showAsAction="never"/>
     <item android:id="@+id/carrito"
         android:title="carrito"
-        android:icon="@mipmap/carrito"
+        android:icon="@mipmap/carritocompra"
         app:showAsAction="always"/>
 </menu>

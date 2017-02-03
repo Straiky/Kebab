@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="@android:color/black"
+    android:background="@android:color/white"
     android:weightSum="1000">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -12,17 +12,19 @@
         android:layout_marginTop="15sp"
         android:layout_weight="3">
         <Spinner
-            android:layout_width="250sp"
-            android:layout_height="wrap_content"
             android:id="@+id/spnBebidas"
-            android:background="@android:color/white"
-            android:layout_weight="3"/>
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@android:drawable/spinner_background"
+            android:gravity="start"
+            android:spinnerMode="dialog" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/precio"
             android:layout_weight="1"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +40,7 @@
             android:layout_marginTop="25sp"
             android:layout_marginLeft="25sp"
             android:layout_weight="1"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
 
         <EditText
             android:layout_width="50sp"
@@ -47,7 +49,8 @@
             android:layout_marginLeft="25sp"
             android:id="@+id/cantidadBebidas"
             android:inputType="number"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
             android:layout_weight="6"
             android:text="0"
             android:textAlignment="textEnd" />
@@ -62,18 +65,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salir"
-            android:id="@+id/btnsalir"/>
+            android:id="@+id/btnsalir"
+            style="@android:style/Widget.Button.Inset"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/siguiente"
-            android:id="@+id/btnsiguiente"/>
+            android:id="@+id/btnsiguiente"
+            style="@android:style/Widget.Button.Inset"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnAñadir"
-            android:id="@+id/btnAñadir"/>
+            android:id="@+id/btnAñadir"
+            style="@android:style/Widget.Button.Inset"/>
 
     </LinearLayout>
 </LinearLayout>

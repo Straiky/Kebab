@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@android:color/white"
     android:weightSum="28"
     android:orientation="vertical">
 
@@ -15,14 +16,29 @@
         android:layout_marginLeft="40dp"
         android:layout_weight="3">
 
-
-        <TextView
-            android:text="@string/lblPedido"
-            android:layout_width="203dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblPedido"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp" />
+            android:orientation="vertical"
+            android:weightSum="14"
+            android:gravity="center|center_vertical">
+            <TextView
+                android:text="@string/lblPedido"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblPedido"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:layout_weight="13"
+                android:fontFamily="cursive" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/datosCliente"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:text=""/>
+        </LinearLayout>
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -34,8 +50,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/rdbTarjeta"
                 android:layout_weight="1"
-                android:textColor="@android:color/background_light"
-                android:button="@android:drawable/btn_radio" />
+                android:textColor="@android:color/black"
+                android:button="@android:drawable/btn_radio"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton" />
 
             <RadioButton
                 android:text="@string/rdbContado"
@@ -43,7 +60,8 @@
                 android:layout_height="36dp"
                 android:id="@+id/rdbContado"
                 android:button="@android:drawable/btn_radio"
-                android:textColor="@android:color/background_light" />
+                android:textColor="@android:color/black"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton" />
         </RadioGroup>
 
     </LinearLayout>
@@ -58,14 +76,17 @@
             android:layout_marginLeft="15sp"
             android:layout_marginTop="15sp"
             android:text="@string/lbltarjeta"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
+            android:inputType="number"
+            android:maxLength="20"
             android:id="@+id/NºTarjeta" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
             android:hint="@string/tarjehint"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
             android:id="@+id/txtNumTarjeta"
             />
     </LinearLayout>
@@ -74,20 +95,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_weight="3">
         <TextView
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
             android:text="@string/fechac"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:id="@+id/lblFecha" />
         <EditText
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
             android:hint="@string/FechaHint"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
             android:id="@+id/txtFecha"
             android:layout_width="125sp"
             android:inputType="date" />
@@ -105,13 +126,15 @@
             android:layout_marginTop="15sp"
             android:text="@string/lbldigitos"
             android:id="@+id/lblDigitos"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <EditText
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
             android:hint="@string/digitosHint"
             android:inputType="number"
-            android:background="@android:color/white"
+            android:maxLength="3"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
             android:id="@+id/txtDigitos"
             android:layout_width="50sp" />
     </LinearLayout>
@@ -125,25 +148,29 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:text="Tipo de Kebab"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Tipo de Carne"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Tamaño"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cantidad"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <LinearLayout
@@ -156,25 +183,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:id="@+id/Tipo_de_Kebab"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:id="@+id/Tipo_de_Carne"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:id="@+id/Tamaño"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/Cantidad"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <LinearLayout
@@ -187,13 +214,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Tipo de Bebida"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Cantidad"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -205,13 +234,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:id="@+id/Tipo_de_Bebida"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:id="@+id/Cantidad_bebida"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <LinearLayout
@@ -224,7 +253,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/lblTotal"
             android:text="gegehththt"
-            android:textColor="@android:color/white"/>
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <LinearLayout
@@ -236,13 +266,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salir"
-            android:id="@+id/btnsalir"/>
+            android:id="@+id/btnsalir"
+            style="@android:style/Widget.Button.Inset"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Aceptar"
-            android:id="@+id/btnAceptar"/>
+            android:id="@+id/btnAceptar"
+            style="@android:style/Widget.Button.Inset"/>
 
     </LinearLayout>
 </LinearLayout>

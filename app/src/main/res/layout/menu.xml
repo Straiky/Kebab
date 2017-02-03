@@ -53,19 +53,22 @@
             android:id="@+id/btnsalir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/salir" />
+            android:text="@string/salir"
+            style="@android:style/Widget.Button.Inset"/>
 
         <Button
             android:id="@+id/btnAñadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnAñadir" />
+            android:text="@string/btnAñadir"
+            style="@android:style/Widget.Button.Inset"/>
 
         <Button
             android:id="@+id/btnsiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/siguiente" />
+            android:text="@string/siguiente"
+            style="@android:style/Widget.Button.Inset"/>
 
     </LinearLayout>
 

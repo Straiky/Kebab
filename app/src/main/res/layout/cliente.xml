@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     android:weightSum="136">
 
     <LinearLayout
@@ -18,16 +18,18 @@
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:text="Nombre:"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/nom"
-            android:background="@android:color/white"
             android:id="@+id/txtNombre"
             android:layout_weight="2.87"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
             android:inputType="textPersonName"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            style="@style/Widget.AppCompat.EditText" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,12 +43,12 @@
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:text="Apellidos:"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/ape"
-            android:background="@android:color/white"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
             android:id="@+id/txtApellido"
             android:maxLines="1"
             android:inputType="textPersonName"/>
@@ -63,13 +65,13 @@
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:text="Direccion:"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <EditText
             android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:hint="@string/direc"
             android:inputType="textPostalAddress"
-            android:background="@android:color/white"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
             android:id="@+id/txtDireccion"
             android:singleLine="true" />
     </LinearLayout>
@@ -84,13 +86,13 @@
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:text="Telefono:"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <EditText
             android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:hint="@string/tel"
             android:inputType="phone"
-            android:background="@android:color/white"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
             android:id="@+id/txtTelefono"
             android:maxLength="9"/>
     </LinearLayout>
@@ -105,13 +107,13 @@
             android:layout_width="75sp"
             android:layout_height="wrap_content"
             android:text="Código Postal:"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/black"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/cp"
             android:inputType="number"
-            android:background="@android:color/white"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
             android:id="@+id/txtCP"
             android:layout_weight="1.83"
             android:maxLength="5"/>
@@ -126,12 +128,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salir"
-            android:id="@+id/btnsalir"/>
+            android:id="@+id/btnsalir"
+            style="@android:style/Widget.Button.Inset" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/siguiente"
-            android:id="@+id/btnsiguiente"/>
+            android:id="@+id/btnsiguiente"
+            style="@android:style/Widget.Button.Inset" />
     </LinearLayout>
 </LinearLayout>

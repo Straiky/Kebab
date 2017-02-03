@@ -58,6 +58,8 @@
             android:theme="@style/Theme.AppCompat.Light.Dialog">
 
         </activity>
+        <activity android:name=".login"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

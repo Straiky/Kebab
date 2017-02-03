@@ -27,9 +27,11 @@
     <string name="FechaHint">Introduzca la fecha de caducidad</string>
     <string name="lbldigitos">3 Digitos</string>
     <string name="digitosHint">Introduzca los 3 digitos de atras</string>
-    <string name="fechac">fecha de c</string>
+    <string name="fechac">Fecha expiración</string>
     <string name="agradecer">Gracias por realizar su compra.</string>
     <string name="btnMenuPrincipal">Menu Principal</string>
     <string name="title_activity_maps">Map</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lblUsuario">Usuario:</string>
+    <string name="lblPass">Contraseña</string>
 </resources>

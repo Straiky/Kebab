@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="com.ejemplos.kebab.MainActivity"
-    android:background="@android:color/background_dark">
+    android:background="@android:color/white">
 
     <TextView
         android:text="@string/lblTitulo"
@@ -20,8 +20,9 @@
         android:textSize="@android:dimen/app_icon_size"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/background_light"
-        android:layout_weight="6"/>
+        android:textColor="@android:color/black"
+        android:layout_weight="6"
+        android:fontFamily="cursive" />
 
     <ImageView
         android:layout_width="191dp"
@@ -43,7 +44,8 @@
         android:layout_marginBottom="33dp"
         android:layout_above="@+id/btnMaps"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        style="@android:style/Widget.Button.Inset"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -53,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lblContacto"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/black"
             android:textSize="24sp"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/lblLocalizacion"
@@ -65,7 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/btnMaps"
-            android:id="@+id/btnContacto" />
+            android:id="@+id/btnContacto"
+            style="@android:style/Widget.Button.Inset"/>
     </LinearLayout>
 
     <LinearLayout
@@ -77,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lblLocalizacion"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/black"
             android:textSize="24sp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"/>
@@ -89,6 +92,7 @@
             android:id="@+id/btnMaps"
             android:layout_alignBaseline="@+id/lblLocalizacion"
             android:layout_alignBottom="@+id/lblLocalizacion"
-            android:layout_toEndOf="@+id/lblLocalizacion" />
+            android:layout_toEndOf="@+id/lblLocalizacion"
+            style="@android:style/Widget.Button.Inset"/>
     </LinearLayout>
 </LinearLayout>
