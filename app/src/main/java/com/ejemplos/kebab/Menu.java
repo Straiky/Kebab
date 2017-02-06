@@ -1,6 +1,8 @@
 package com.ejemplos.kebab;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
 
 public class Menu  extends AppCompatActivity {
@@ -25,6 +29,7 @@ public class Menu  extends AppCompatActivity {
     ArrayList<String> kebabList = new ArrayList<>();
     ArrayList<String> cliente=new ArrayList<>();
     Double factura=0.0;
+    Cursor kebabs;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
